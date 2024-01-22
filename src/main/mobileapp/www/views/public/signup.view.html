@@ -1,0 +1,33 @@
+<style title="local"></style><ion-view class="pane login-bg"> 
+  <ion-content data-component="crn-ion-content" class="scroll-content" style="padding: 0px;"> 
+    <div data-replace="true" data-component="crn-container" class="containerMobile " id="crn-container-445023"> 
+      <form crn-datasource="" data-component="crn-form" id="crn-form-signup"> 
+        <img alt="Placehold" src="img/logo.png" class="center-block" style="object-fit: cover;
+width: 214px;
+height: auto;" xattr-position="center-block" width="100%" height="" object-fit="object-fit: cover;" data-component="crn-image" id="crn-image-213490">
+        <div class="component-holder ng-binding ng-scope list list-inset login-mobile" data-component="crn-form" id="crn-form-1034800"> 
+          <h1 data-component="crn-heading" class="h3 text-left crn-cup-title" id="crn-title-signup" xattr-type="h3" xattr-position="text-left" style="text-align: left;">Novo cadastro</h1>
+          <h2 class="font-size-default text-left crn-cup-label" xattr-position="text-left" subtitle-size="font-size-default" data-component="crn-label" id="crn-label-818357" style="">Nome</h2>
+          <div class="item item-input" data-component="crn-input" id="crn-input-802839">
+            <input aria-label="Aria Label Text" id="crn-input410" type="text" placeholder="Ex: Maria da Conceição" ng-model="vars.nome" mask="" keyboard="">
+          </div>
+          <h2 class="font-size-default text-left crn-cup-label" xattr-position="text-left" subtitle-size="font-size-default" data-component="crn-label" id="crn-label-238597">E-mail</h2>
+          <div class="item item-input component-holder" data-component="crn-input" id="crn-input-email"> 
+            <input type="email" ng-model="vars.signupEmail" id="signupEmail" aria-label="{{'Signup.view.Email' | translate}}" placeholder="Ex: maria@gmail.com" mask="" keyboard="email"> 
+          </div> 
+          <h2 class="font-size-default text-left crn-cup-label" xattr-position="text-left" subtitle-size="font-size-default" data-component="crn-label" id="crn-label-186603">Senha</h2>
+          <div class="item item-input component-holder" data-component="crn-input" id="crn-input-senha"> 
+            <input type="password" ng-model="vars.signupPassword" id="signupPassword" aria-label="{{'Users.view.Senha' | translate}}" placeholder="Digite aqui sua senha" mask="" keyboard="password"> 
+          </div> 
+          <h2 class="font-size-default text-left crn-cup-label" xattr-position="text-left" subtitle-size="font-size-default" data-component="crn-label" id="crn-label-981983">Confirme a senha</h2>
+          <div class="item item-input component-holder" data-component="crn-input" id="crn-input-confirmaSenha"> 
+            <input type="password" ng-model="vars.signupConfirmPassword" id="signupConfirmPassword" aria-label="{{'Users.view.ConfirmeSuaSenha' | translate}}" placeholder="Confirme sua senha" mask="" keyboard="password"> 
+          </div> 
+          <button class="button button-block button-default button-medium filled" type="submit" xattr-fullsize="button-block" xattr-theme="button-default" ng-click="cronapi.client('js.blockly.auth.UserControl.signUp').names('3a3ca4e0', '04d8e9d1', '164870cd', 'b019c901').run(vars.nome, vars.signupEmail, vars.signupPassword, vars.signupConfirmPassword)" data-component="crn-button" xattr-size="button-medium" xattr-type="filled" id="crn-button-1009231"><i class="" xattr-icon-theme=""></i> <span>Cadastrar</span></button>
+          <button class="button button-block button-medium filled button-stable" type="submit" xattr-fullsize="button-block" xattr-theme="button-stable" ng-click="cronapi.screen.changeView('#/app/login', [])" data-component="crn-button" xattr-size="button-medium" xattr-type="filled" id="crn-button-418894"><i class="" xattr-icon-theme=""></i> <span>Cancelar</span></button> 
+        </div>
+        <img alt="Placehold" src="img/pessoa-chutando.svg" class="crn-cup-img" style="object-fit: cover;" xattr-position="" width="100%" height="" object-fit="object-fit: cover;" data-component="crn-image" id="crn-image-143658"> 
+      </form> 
+    </div>
+  </ion-content> 
+</ion-view>

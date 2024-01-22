@@ -1,0 +1,53 @@
+<style title="local">
+#crn-button-749631 { 
+  margin: 0px;
+}
+
+button#crn-button-749631 { 
+  opacity: 0.5;
+}
+
+#crn-heading-226690 { 
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 6px;
+}
+
+#crn-label-740024 { 
+  color: rgb(255, 255, 255);
+  font-size: 28px;
+  font-weight: bold;
+}
+</style>
+<ion-view class="pane" role="region"> 
+  <ion-header-bar role="heading" class="crn-ion-header-bar bar bar-default" xattr-theme="bar-default" data-component="crn-ion-header-bar" id="crn-ion-header-bar-home-logged"> 
+    <div class="buttons buttons-left header-item" data-component="crn-header-button" id="crn-header-button-1"> 
+      <button aria-labelledby="left_navicon_sr" class="button button-clear component-holder" menu-toggle="left"> <i class="icon ion-navicon"></i> <span id="left_navicon_sr" class="sr-only">{{'Accessibility.Button.Aria.Label.NavIcon' | translate}}</span> </button> 
+    </div> 
+    <h1 class="title" align-title="text-align: center;" style="text-align: center;">{{'Home.view.Home' | translate }}</h1> 
+    <div aria-labelledby="right_navicon_sr" class="buttons buttons-right header-item" data-component="crn-header-button" id="crn-header-button-2"> 
+      <button class="button button-clear component-holder" menu-toggle="right"> <i class="icon ion-navicon"></i> <span id="right_navicon_sr" class="sr-only">{{'Accessibility.Button.Aria.Label.NavIcon' | translate}}</span> </button> 
+    </div> 
+  </ion-header-bar> 
+  <ion-content class="scroll-content content-container has-header" data-component="crn-ion-content" style=""> 
+    <div class="container-titulo col-xs-12"> 
+      <button class="button button-medium button-block filled button-default" type="submit" xattr-theme="button-default" ng-click="cronapi.callFunction('cronapi.screen.back').call()" data-component="crn-button" xattr-size="button-medium" xattr-type="filled" id="crn-button-749631" style="width: 12px; height: 21px;"><i class="ion ion-chevron-left" xattr-icon-theme=""> </i> <span></span> </button> 
+      <h2 class="text-left h5" xattr-position="text-left" xattr-type="h5" data-component="crn-heading" id="crn-heading-226690">Ranking de Colocados</h2> 
+    </div> 
+    <div class="component-holder ng-scope col-xs-12" data-component="crn-datasource"> 
+      <datasource name="listaRanking" entity="app.query94737" keys="_objectKey" rows-per-page="100" on-before-create="" on-after-create="" on-before-update="" on-after-update="" on-before-delete="" on-after-delete="" on-after-fill="" data-component="crn-datasource" id="crn-datasource-102220" schema="[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;accessFailedCount&quot;,&quot;type&quot;:&quot;Int32&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;email&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;emailConfirmed&quot;,&quot;type&quot;:&quot;Boolean&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;lockoutEnabled&quot;,&quot;type&quot;:&quot;Boolean&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;lockoutEnd&quot;,&quot;type&quot;:&quot;DateTime&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;name&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;normalizedEmail&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;normalizedUserName&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;password&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;phoneNumber&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;phoneNumberConfirmed&quot;,&quot;type&quot;:&quot;Boolean&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;securityStamp&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;twoFactorEnabled&quot;,&quot;type&quot;:&quot;Boolean&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;userName&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;theme&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;picture&quot;,&quot;type&quot;:&quot;Binary&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;pontuacao&quot;,&quot;type&quot;:&quot;Int32&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;_objectKey&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:true}]" condition=""></datasource> 
+    </div> 
+    <div data-component="crn-container" data-replace="true" id="crn-container-324408" class="{{key==0 ? 'container-card col-xs-12 card-gold' : key==1 ? 'container-card col-xs-12 card-silver' : key==2 ? 'container-card col-xs-12 card-bronze' : 'container-card col-xs-12'}}" ng-repeat="(key, usuario) in listaRanking.data"> 
+      <div data-component="crn-container" data-replace="true" id="crn-container-293654" class="card-colocados col-xs-12"> 
+        <h2 class="font-size-default text-left" xattr-position="text-left" subtitle-size="font-size-default" data-component="crn-label" id="crn-label-740024" style="{{key==0 || key==1 || key==2 ? 'color: rgb(255, 255, 255);' : 'color: rgb(0, 0, 0);'}}">{{key+1}}.</h2> 
+        <p xattr-position="text-center" style="font-size: var(--textNormalSize, 14px); margin-left: 36px; {{key==0 || key==1 || key==2 ? 'color: rgb(255, 255, 255);' : 'color: rgb(0, 0, 0);'}}; font-weight: bold;" class="text-center" xattr-type="font-size: var(--textNormalSize, 14px);" data-component="crn-paragraph" id="crn-paragraph-889574">{{usuario.name}}</p> 
+      </div> 
+      <div data-component="crn-container" data-replace="true" id="crn-container-530962" class="card-pontos col-xs-12"> 
+        <p xattr-position="text-center" style="{{key==0 || key==1 || key==2 ? 'color: rgb(255, 255, 255);' : 'color: rgb(0, 0, 0);'}} font-size: 16px; font-weight: bold; margin-right: 19px;" class="text-center" xattr-type="font-size: var(--textNormalSize, 14px);" data-component="crn-paragraph" id="crn-ranking-pontos">{{usuario.pontuacao}} pts</p> 
+      </div> 
+    </div> 
+    <div class="component-holder ng-scope col-xs-12" data-component="crn-infinite-scroll" id="crn-infinite-scroll-917088"> 
+      <cron-infinite-scroll crn-datasource="listaRanking" class=""></cron-infinite-scroll> 
+    </div> 
+  </ion-content> 
+</ion-view>

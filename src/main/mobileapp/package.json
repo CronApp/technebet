@@ -1,0 +1,15 @@
+{
+  "name": "io.cronapp.apps.bolaocopa",
+  "displayName": "Bolao Copa",
+  "version": "1.0.0",
+  "description": "Bolao Copa",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "CronApp IDE",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "cronapi-js": "2.9.1-SP.21"
+  }
+}

@@ -1,0 +1,84 @@
+<div ng-init="cronapi.client('js.blockly.historico.Historico.historicoUsuario').run(vencedorPenaltis)" class="container-ranking"> 
+  <div class="container-titulo"> 
+    <button class="botao-titulo" type="submit" ng-click="cronapi.callFunction('cronapi.screen.back').call()"><i class="glyphicon glyphicon-chevron-left botao-texto" icon-theme="" style="opacity: 0.5; font-size: 24px; font-weight: none"></i></button> 
+    <h2 class="titulo-ranking" data-component="crn-text-component" id="crn-text-component-184093" style="font-weight: bold; font-size: 24px;">Histórico de usuário</h2> 
+  </div> 
+  <div class="component-holder ng-scope col-xs-12" data-component="crn-datasource"> 
+    <datasource name="listaRanking" entity="app.query94737" keys="_objectKey" rows-per-page="100" on-before-create="" on-after-create="" on-before-update="" on-after-update="" on-before-delete="" on-after-delete="" on-after-fill="" data-component="crn-datasource" id="crn-datasource-102220" schema="[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;accessFailedCount&quot;,&quot;type&quot;:&quot;Int32&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;email&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;emailConfirmed&quot;,&quot;type&quot;:&quot;Boolean&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;lockoutEnabled&quot;,&quot;type&quot;:&quot;Boolean&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;lockoutEnd&quot;,&quot;type&quot;:&quot;DateTime&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;name&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;normalizedEmail&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;normalizedUserName&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;password&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;phoneNumber&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;phoneNumberConfirmed&quot;,&quot;type&quot;:&quot;Boolean&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;securityStamp&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;twoFactorEnabled&quot;,&quot;type&quot;:&quot;Boolean&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;userName&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;theme&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;picture&quot;,&quot;type&quot;:&quot;Binary&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;pontuacao&quot;,&quot;type&quot;:&quot;Int32&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;_objectKey&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:true}]" condition=""></datasource>
+     
+  </div> 
+  <div data-component="crn-container" data-replace="true" id="crn-container-324408" class="{{vars.position==1 ? 'container-card-historico card-gold' : vars.position==2 ? 'container-card-historico card-silver' : vars.position==3 ? 'container-card-historico card-bronze' : 'container-card-historico '}}"> 
+    <div data-component="crn-container" data-replace="true" id="crn-container-293654" class="card-colocados col-xs-8"> 
+      <p xattr-position="text-center" style="font-size: var(--textNormalSize, 14px); margin-left: 20px; {{key==0 || key==1 || key==2 ? 'color: rgb(255, 255, 255);' : 'color: rgb(0, 0, 0);'}}; font-weight: bold;" class="text-center titulo-ranking" xattr-type="font-size: var(--textNormalSize, 14px);" data-component="crn-paragraph" id="crn-paragraph-889574">{{vars.nomeEditado}}</p> 
+    </div> 
+    <div data-component="crn-container" data-replace="true" id="crn-container-530962" class="card-pontos col-xs-12"> 
+      <p xattr-position="text-center" style="{{key==0 || key==1 || key==2 ? 'color: rgb(255, 255, 255);' : 'color: rgb(0, 0, 0);'}} font-size: 16px; font-weight: bold; margin-right: 19px;" class="text-center titulo-ranking" xattr-type="font-size: var(--textNormalSize, 14px);" data-component="crn-paragraph" id="crn-ranking-pontos">{{vars.infoUsuario.pontuacao}} pts</p> 
+    </div> 
+  </div>
+  
+  <div class="containe-historico-partidas" style="margin-top:8px;">
+    <div data-component="crn-container" data-replace="true" id="crn-container-324408" class="container-card-historico"> 
+      <div data-component="crn-container" data-replace="true" id="crn-container-293654" class="card-historico"> 
+        <div class="historico-partida minha-final">
+            <h3 class="minha-final" data-component="crn-label" id="crn-label-740024" style="color: rgb(0, 0, 0); font-size: 16px; margin: 0px;"><b>Palpite "Minha Final"</b></h3>
+        </div> 
+        <div class="historico-partida minha-final">
+            <h3 class="" data-component="crn-label" id="crn-label-740024" style="color: rgb(0, 0, 0); font-size: 16px; margin: 0px;">PALPITE FINAL: <b>{{vars.minhaFinal.palpiteSelecaoA.sigla}} x {{vars.minhaFinal.palpiteSelecaoB.sigla}}</b></h3>
+        </div> 
+        <div class="historico-partida minha-final">
+            <h3 class="" data-component="crn-label" id="crn-label-740024" style="color: rgb(0, 0, 0); font-size: 16px; margin: 0px;">PALPITE GANHADOR: <b>{{vars.minhaFinal.selecaoCampea.nome | uppercase}}</b></h3>
+        </div> 
+      </div> 
+    </div> 
+  </div> 
+  
+  
+  <div class="containe-historico-partidas" ng-repeat="group in vars.historico | orderBy: '-data'"> 
+    <p data-component="crn-simple-text" id="crn-data-partidas" style="margin-bottom: 0px; color: rgb(0, 0, 0); opacity: 0.5; margin-left: 20px; font-size: 16px; margin-top: 26px;">{{group.data | date:"dd/MM/yyyy"}}</p> 
+    <div data-component="crn-container" data-replace="true" id="crn-container-324408" class="container-card-historico" ng-repeat="palpite in group.partidas"> 
+      <div data-component="crn-container" data-replace="true" id="crn-container-293654" class="card-historico"> 
+        <div class="historico-partida"> 
+          <div class="container-partida-texto"> 
+            <h3 class="" data-component="crn-label" id="crn-label-740024" style="color: rgb(0, 0, 0); font-size: 12px; font-weight: bold; margin: 0px;">Partida:</h3> 
+            <div class="placar-historico"> 
+              <p class="partida-texto" data-component="crn-paragraph" id="crn-partida-mandante">{{palpite.partida.mandante.sigla}}</p> 
+              <p class="partida-texto" data-component="crn-paragraph"> x </p> 
+              <p class="partida-texto" data-component="crn-paragraph" id="crn-partida-visitante">{{palpite.partida.visitante.sigla}}</p> 
+            </div> 
+          </div> 
+        </div> 
+        <div class="historico-partida"> 
+          <div class="container-partida-texto"> 
+            <h3 class="" data-component="crn-label" id="crn-label-740024" style="color: rgb(0, 0, 0); font-size: 12px; font-weight: bold; margin: 0px;">Placar:</h3> 
+            <div class="container-placar-historico"> 
+              <div class="placar-historico"> 
+                <p class="partida-texto" data-component="crn-paragraph" id="crn-placar-mandante">{{palpite.partida.gols_mandante}}</p> 
+                <p class="partida-texto" data-component="crn-paragraph">x</p> 
+                <p class="partida-texto" data-component="crn-paragraph" id="crn-placar-visitante">{{palpite.partida.gols_visitante}}</p> 
+              </div> 
+              <p class="partida-texto" data-component="crn-paragraph" ng-show="palpite.partida.penalidades" id="penaltis-historico">Pên.:{{palpite.partida.vencedor_penaltis.sigla}}</p> 
+            </div> 
+          </div> 
+        </div> 
+        <div class="historico-partida"> 
+          <div class="container-partida-texto"> 
+            <h3 class="" data-component="crn-label" id="crn-label-740024" style="color: rgb(0, 0, 0); font-size: 12px; font-weight: bold; margin: 0px;">Palpite:</h3> 
+            <div class="container-placar-historico"> 
+              <div class="placar-historico"> 
+                <p class="partida-texto" data-component="crn-paragraph" id="crn-palpite-mandante">{{palpite.gols_mandante}}</p> 
+                <p class="partida-texto" data-component="crn-paragraph">x</p> 
+                <p class="partida-texto" data-component="crn-paragraph" id="crn-palpite-visitante">{{palpite.gols_visitante}}</p> 
+              </div> 
+              <div class="palpite-penaltis"> 
+                <p class="partida-texto" data-component="crn-paragraph" id="penaltis-historico" ng-hide="palpite.ganhador_penalidades.sigla == null">Pên.:{{palpite.ganhador_penalidades.sigla}}</p> 
+              </div> 
+            </div> 
+          </div> 
+        </div> 
+      </div> 
+      <div data-component="crn-container" data-replace="true" id="crn-container-530962" class="card-pontos col-xs-12"> 
+        <p xattr-position="text-center" style="{{key==0 || key==1 || key==2 ? 'color: rgb(255, 255, 255);' : 'color: rgb(0, 0, 0);'}} font-size: 16px; font-weight: bold; margin-right: 19px;" class="text-center titulo-ranking" xattr-type="font-size: var(--textNormalSize, 14px);" data-component="crn-paragraph" id="crn-ranking-pontos">{{palpite.pontuacao || '0'}} pts</p> 
+      </div> 
+    </div> 
+  </div> 
+</div>

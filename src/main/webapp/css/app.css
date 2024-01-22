@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import 'form.css';
+@import 'card.css';
+@import 'ranking.css';
+@import 'menu.css';
+@import 'regras.css';
+
+:root {
+  --primary-color: #20284E;
+  --black-color: #000000;
+}
+
+.img-background-login {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.container-cadastro {
+    flex-direction: column;
+    width: 100vw !important;
+}
+
+.img-logo {
+    width: 180px;
+    height: auto;
+}
+
+.h3 {
+    width: 100% !important;
+    background: transparent !important;
+}
+
+.container-feedback-sign {
+    text-align: center;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.title-sign {
+    color: #373737;
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.title-home {
+    color: #000000;
+    opacity: 0.75;
+    font-size: 24px;
+    font-family: 'Roboto', sans-serif;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.header-next-matches {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.header-viewer-all {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    color: #000000;
+    opacity: 0.51;
+    font-size: 18px;
+    font-weight: bold;
+    
+}
+
+.header-viewer-all i {
+    margin-left: 5px;
+}
+
+.navbar-default #navbar .navbar-nav li a:focus, .navbar-default #navbar .navbar-nav li a:active, .navbar-default #navbar .navbar-nav li a:hover, .navbar-default #navbar .navbar-nav li a:focus-within {
+    color: var(--primary-color);
+}
+
+.k-grid {
+    overflow: auto;
+}
+
+.login-view {
+    margin-left: 30px;
+}
+
+.select-viewer-match {
+    background: #fff;
+}
+
+.img-background-champions {
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    width: calc(100vw - var(--menuVerticalWidth));
+    right: 0;
+}
+
+.container-fluid {
+    padding: 0;
+    height: 100%;
+}
+
+.obs-final {
+    bottom: 15px;
+    color: #000000;
+    font-weight: bold;
+    text-align: center;
+    left: auto;
+    right: 0;
+}
+
+@media only screen and (min-width: 1366px){
+    .header-viewer-all{
+        margin-right: 190px;
+    }
+}
+
+@media only screen and (min-width:1600px){
+    .header-viewer-all{
+        margin-right: 415px;
+    }
+}
+
+@media only screen and (min-width: 1800px){
+    .header-viewer-all{
+        margin-right: 300px;
+    }
+}
+
+@media (max-width: 412px)
+{
+  .cartao {
+      width: 330px;
+  }
+}

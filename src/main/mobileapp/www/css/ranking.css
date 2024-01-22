@@ -1,0 +1,48 @@
+.container-titulo {
+    display: flex;    
+    justify-content: flex-start;
+    align-items: center;
+    width: calc(100% - 40px); 
+    padding-left: 0px;
+    height: 46px;
+    margin: 12px 20px;   
+}
+
+.titulo-ranking-home {
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.container-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    width: calc(100% - 40px);
+    height: 60px;
+    border-radius: 8px;    
+    margin: 8px 20px 0px 20px;
+    background-image: linear-gradient(90deg, #B3BCD2, #E8E7F9);
+}
+
+.card-gold {
+    background-image: linear-gradient(222deg, #B47822, #DF9E2B, #ECC83A, #E69F27, #E69F27, #E69E26);
+}
+
+.card-silver {
+    background-image: linear-gradient(222deg, #BABBBC, #BEBFC1, #D9D9D9, #9C9D9F, #9C9D9F, #898A8C);
+}
+
+.card-bronze {
+    background-image: linear-gradient(222deg, #A87A3F, #AA7C43, #CB985B, #8C623E, #8C623E, #845B3B);
+}
+
+.card-colocados {
+    display: flex;
+    align-items: center;
+    color: rgb(0,0,0);
+}
+
+.card-pontos {
+    display: flex;
+    justify-content: flex-end;
+}

@@ -1,0 +1,352 @@
+.page-detail-match {
+    position: relative;
+    height: calc(100vh + 100px);
+    overflow: auto;
+}
+
+.crn-cup-label {
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    color: var(--black-color);
+    opacity: 0.75;
+    font-weight: bold;
+    margin: 0;
+    margin-left: 5px;
+    margin-bottom: 4px;
+}
+
+.crn-cup-title  {
+    color: var(--primary-color);
+    font-size: 23px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    margin-bottom: 25px !important;
+    margin-left: 5px !important;
+    border: none !important;
+    background: transparent !important;
+}
+
+.crn-cup-img {
+    height: auto;
+    width: 160px;
+    position: fixed;
+    bottom: 0;
+    z-index: -1;
+    right: 0;
+}
+
+.header-match {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-match-top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.header-match-top p {
+    padding: 0px;
+    margin: 0px;
+}
+
+.header-match-bottom p {
+    font-family: 'Roboto', sans-serif;
+    margin-left: 20px;
+    font-size: 16px;
+    color: #373737;
+}
+
+.title-tab {
+    color: var(--primary-color);
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.container-result-match {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.container-result-match .result-team-match {
+    height: 60px;
+    width: 60px;
+    background: #fff;
+    border: none;
+    color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+}
+
+.container-resume-match {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.container-match {
+    width: 60%;
+    margin-right: 5%;
+    background-image: linear-gradient(81deg, #20284E, #374B9A);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    border-radius: 8px;
+}
+
+.container-match-draw {
+    height: 250px;
+}
+
+.container-match span {
+    font-family: 'Roboto', sans-serif;
+    color: #ffff;
+    font-size: 16px;
+    
+}
+
+.info-pre-match {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    height: 30px;
+}
+
+.info-pre-match span {
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.container-guess {
+    width: 35%;
+    height: 200px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.container-guess-draw {
+    height: 250px;
+}
+
+.card-guess {
+    padding: 20px;
+}
+
+.img-team {
+    height: 40px;
+    width: auto;
+}
+
+.input-score {
+    height: 50px;
+    width: 50px;
+    border-radius: 5px;
+    border: 1px solid #707070;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: -14px;
+}
+
+.title-guess {
+    color: #000000;
+    font-size: 20px;
+    opacity: 0.51;
+}
+
+.guess-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 12px;
+}
+
+.guess-team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.guess-team span {
+    color: #000000;
+    opacity: 0.75;
+    font-size: 15px;
+}
+
+.container-info-guesses {
+    margin-top: 35px;
+    position: relative;
+}
+
+.container-info-guesses-title {
+    position: absolute;
+    top: -20px;
+    left: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: #000000;
+}
+
+.container-info-guesses-obs {
+    position: absolute;
+    bottom: -20px;
+    right: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: #000000;
+}
+
+.table-info-guesses {
+    width: 100%;
+}
+
+.table-info-guesses thead{
+    background: #fff;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    border-bottom: 3px solid #F9F9F9;
+}
+
+.table-info-guesses thead td {
+    color: #000000;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.table-info-guesses tbody tr {
+    background: #fff;
+    border-bottom: 3px solid #F9F9F9;
+}
+
+.table-info-guesses tbody td {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.container-info-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 100px;
+    background: #fff;
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+.list-buttons-footer {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+}
+
+.list-buttons-footer button {
+    margin-top: 0px !important;
+}
+
+.card-not-match {
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title-not-match {
+    color: #000000;
+    font-size: 20px;
+    opacity: 0.17;
+    text-align: center;
+}
+
+.tab-pane.active {
+    margin-top: 20px;
+}
+
+.nav.nav-tabs li{
+    opacity: 0.4;
+}
+
+.ctn-tab .nav-tabs li a{
+    font-size: 16px;
+}
+
+.nav.nav-tabs li.active {
+    opacity: 1;
+}
+
+.ctn-tab .nav-tabs li.active{
+    background: transparent;
+    border-radius: 0;
+}
+
+.nav.nav-tabs li.active a {
+    color: #20284E;
+    font-size: 16px;
+    font-weight: bold;
+    background: transparent;
+    padding-bottom: 5px;
+    border-bottom: 3px solid #20284E;
+}
+
+@media (max-width: 1200px) {
+ .container-resume-match {  
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ }
+
+ .container-match {
+     margin-right: 0px;
+ }
+
+ .container-guess {
+    margin-top: 15px;
+    width: 60%;
+ }
+}
+
+@media (max-width: 900px) {
+    .container-resume-match {  
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container-match {
+        width: 100%;
+        margin-right: 0px;
+    }
+
+    .container-guess {
+        margin-top: 15px;
+        width: 100%;
+    }
+}

@@ -1,0 +1,129 @@
+<style title="local">
+
+</style><div id="starter" ng-init="cronapi.client('js.blockly.palpite.Palpite.obterPalpite').run()" ng-destroy="" data-component="crn-start" screen-params=""><div class="page-detail-match">
+    <div class="page-match">
+    <div class="header-match">
+        <div class="header-match-top">
+            <i class="fa fa-chevron-left fa-lg" aria-hidden="true" style="margin-right: 5px;" ng-click="cronapi.client('js.blockly.palpite.Palpite.retornar').run()"></i>
+            <p ng-if="vars.partida.fase.nome_fase == 'Fase de Grupos'" class="title-tab">{{vars.partida.fase.nome_fase}} - {{vars.partida.mandante.grupo.nome_grupo}} - {{vars.partida.rodada.rodada}}</p>
+            <p ng-if="vars.partida.fase.nome_fase != 'Fase de Grupos'" class="title-tab">{{vars.partida.fase.nome_fase}}</p>
+        </div>
+        <div class="header-match-bottom">
+             <p>{{vars.partida.data_hora_partida | date:"dd/MM/yyyy 'às' HH:mm" : 'UTC'}} {{vars.partida.status_Partida.nome_status == 'Encerrada' ? '- Encerrado' : ''}}</p>
+        </div>
+    </div>
+</div>
+
+<div class="container-resume-match">
+    <div class="{{vars.existeEmpate == true ? 'container-match container-match-draw' : 'container-match'}}">
+        <div class="info-pre-match">
+            <span>{{vars.partida.mandante.nome}} </span>
+            <span style="margin-left: 30px; margin-right: 30px;">x</span>
+            <span> {{vars.partida.visitante.nome}}</span>
+        </div>
+        <span>{{vars.partida.estadio.nome_estadio}}</span>
+        <div ng-if="vars.partida.status_Partida.nome_status == 'Em andamento' || vars.partida.status_Partida.nome_status == 'Encerrada'" class="container-result-match">
+            <div class="result-team-match">{{vars.partida.gols_mandante}}</div>
+            <span style="margin-left: 30px; margin-right: 30px; font-weight: bold;">{{vars.partida.penalidades ? '('+vars.partida.penaltis_mandante+')' : ''}}  x  {{vars.partida.penalidades ? '('+vars.partida.penaltis_visitante+')' : ''}}</span>
+            <div class="result-team-match">{{vars.partida.gols_visitante}}</div>
+        </div>
+    </div>
+    
+    
+    <div class="{{vars.existeEmpate == true ? 'container-guess container-guess-draw' : 'container-guess'}}">
+        
+        <div ng-if="vars.existePalpite != 0" class="card-guess">
+            <span class="title-guess">Seu palpite:</span>
+            <div class="guess-info">
+                <div class="guess-team">
+                    <img class="img-team" src="{{vars.partida.mandante.bandeira}}">
+                    <span>{{vars.partida.mandante.nome}}</span>
+                </div>
+                
+                <input id="placarA" class="input-score" onkeypress="return isNumber(event)" ng-model="vars.gols_mandante" ng-change="cronapi.client('js.blockly.palpite.Penaltis.verificaPalpiteEmpate').run()">
+                <span>x</span>
+                <input id="placarB" class="input-score" onkeypress="return isNumber(event)" ng-model="vars.gols_visitante" ng-change="cronapi.client('js.blockly.palpite.Penaltis.verificaPalpiteEmpate').run()">
+                <div class="guess-team">
+                    <img class="img-team" src="{{vars.partida.visitante.bandeira}}">
+                    <span>{{vars.partida.visitante.nome}}</span>
+                </div>
+            </div>
+        </div>
+        <div ng-if="vars.existePalpite == 0" class="container-red-card">
+          <img alt="cartão vermelho" src="img/cartao-vermelho.png" class="crn-image" style="object-fit: contain; margin-top: 12px; margin-bottom: 10px;" object-fit="object-fit: contain;" xattr-position="" width="48px" height="70px" data-component="crn-image" id="crn-image-713874">
+          <span style="font-size: 20px; color: rgb(0, 0, 0); text-align: center; font-weight: bold;">Cartão Vermelho! O tempo para palpitar nesta partida acabou :(</span>
+        </div>
+        
+        <div class="container-panaltis component-holder ng-scope" data-component="crn-enterprise-combobox" ng-if="vars.existeEmpate == true">
+            
+            <div class="form-group" id="cron-crn-enterprise-combobox-643094" style="margin-bottom: 0px;">
+                <span class="titulo-penaltis">Quem vence nos pênaltis?</span>
+                <select placeholder="Selecione uma rodada..."  ng-model="vars.vencedorPenaltis" class="form-control select-viewer-match" id="selecaoVencedoraPenal">
+                  <option value="">Selecione uma seleção...</option>
+                  <option value="{{vars.partida.mandante.id}}">{{vars.partida.mandante.nome}}</option>
+                  <option value="{{vars.partida.visitante.id}}">{{vars.partida.visitante.nome}}</option>
+                </select>
+                <!--<cron-select options="{&quot;headerTemplate&quot;:&quot;&quot;,&quot;template&quot;:&quot;&quot;,&quot;footerTemplate&quot;:&quot;&quot;,&quot;placeholder&quot;:&quot;Selecione um vencedor...&quot;,&quot;dataSourceScreen&quot;:{&quot;entityDataSource&quot;:{&quot;hasError&quot;:false},&quot;schema&quot;:[]},&quot;filter&quot;:&quot;contains&quot;,&quot;dataTextField&quot;:&quot;value&quot;,&quot;dataValueField&quot;:&quot;key&quot;,&quot;dynamic&quot;:false,&quot;valuePrimitive&quot;:true,&quot;relationDataSource&quot;:{&quot;entityDataSource&quot;:{&quot;hasError&quot;:false},&quot;schema&quot;:[]},&quot;type&quot;:&quot;fixed&quot;,&quot;staticDataSource&quot;:[{&quot;key&quot;:&quot;cronapi.server('blockly.Palpite.Pelnatis.retornaIdMandante').attr().run()&quot;,&quot;value&quot;:&quot;{{vars.partida.mandante.nome}}&quot;},{&quot;key&quot;:&quot;cronapi.server('blockly.Palpite.Pelnatis.retornaIdVisitante').attr().run()&quot;,&quot;value&quot;:&quot;{{vars.partida.visitante.nome}}&quot;}],&quot;filterKeyValues&quot;:{&quot;&quot;:&quot;&quot;,&quot;contains&quot;:&quot;Contendo&quot;,&quot;startswith&quot;:&quot;Iniciando com&quot;,&quot;endswith&quot;:&quot;Final com&quot;},&quot;initValue&quot;:&quot;&quot;,&quot;firstValue&quot;:false,&quot;changeCursor&quot;:true,&quot;customTemplate&quot;:false,&quot;fillDatasource&quot;:false}" ng-required="false" id="combobox-ganhador-penal" ng-model="vars.vencedorPenaltis" class="crn-select form-control k-textbox" style="" ng-change=""></cron-select>-->
+            </div>
+            <!--<div ng-if="vars.ultima_vencedora" class="form-group" id="ultima-vencedora-selecionada" style="display: flex;">-->
+            <!--    <span class="titulo-penaltis">Último vencedor selecionado:</span>-->
+            <!--    <p style="color: #000000; opacity: 0.75; font-size: 15px; margin-left: 3px;">{{vars.ultima_vencedora || 'Nenhum'}}</p>-->
+            <!--</div>-->
+        </div>
+        
+    </div>
+    
+</div>
+    
+    <div class="container-info-guesses">
+    <span class="container-info-guesses-title">USUÁRIOS QUE DERAM PALPITES</span>
+    <table class="table-info-guesses">
+        <thead>
+            <tr>
+                <td>Nome</td>
+                <td>Palpite</td>
+                <td ng-if="vars.partida.status_Partida.nome_status == 'Encerrada'">Pontos</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="usuario in vars.palpites_usuarios | orderBy: 'nome'">
+                <td>
+                    {{usuario.nome}}
+                </td>
+                <td>
+                    {{usuario.texto_gols_palpite}}
+                </td>
+                <td ng-if="vars.partida.status_Partida.nome_status == 'Encerrada'">
+                    {{usuario.pontuacao || '0'}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <!--<span class="container-info-guesses-obs">Os palpites só serão apresentados quando o jogo começar</span>-->
+</div>
+
+
+
+<div id="container-info-footer-btns" class="container-info-footer">
+    <div class="list-buttons-footer">
+        <button id="btn-cancel" style="margin-right: 5px;" class="btn k-button btn-block btn-info" xattr-fullsize="btn-block" xattr-theme="btn-info" xattr-disabled="" ng-click="cronapi.client('js.blockly.palpite.Palpite.retornar').run()">
+         <span class="" text-theme="">Cancelar</span></button>
+        <button style="margin-right: 5px;" class="btn k-button btn-block color-dark-blue" type="button" xattr-fullsize="btn-block" xattr-theme="color-dark-blue" xattr-disabled="" id="btn-save-guess" ng-click="cronapi.client('js.blockly.palpite.Palpite.salvarPalpite').run()">
+            <span class="" text-theme="">Salvar</span>
+        </button>
+    </div>
+</div>
+
+</div><script>
+    function isNumber(evt) {
+    evt = (evt) ? evt : window.event;
+    var charCode = (evt.which) ? evt.which : evt.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+        return false;
+    }
+    return true;
+}
+</script>
+
+
+</div>

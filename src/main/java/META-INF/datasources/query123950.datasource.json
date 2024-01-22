@@ -1,0 +1,92 @@
+{
+  "customId": "palpitecampeao",
+  "queryName": "palpiteCampeao",
+  "sourceType": "entityFullName",
+  "baseEntity": null,
+  "blockly": null,
+  "entitySimpleName": "MinhaFinal",
+  "entityFullName": "competicao.entity.MinhaFinal",
+  "query": {
+    "isValid": true,
+    "rulesEntity": [
+      {
+        "entity": "MinhaFinal",
+        "alias": "m",
+        "namespace": "competicao.entity.MinhaFinal"
+      }
+    ],
+    "rulesSelect": [
+      {
+        "func": "get",
+        "field": "m"
+      }
+    ],
+    "rulesGroupBy": [],
+    "rulesHaving": [],
+    "rulesOrderBy": [],
+    "rules": {
+      "condition": "AND",
+      "not": false,
+      "valid": true,
+      "rules": []
+    }
+  },
+  "queryParamsValues": [],
+  "verbs": {
+    "GET": true,
+    "GETAuthorities": null,
+    "POST": true,
+    "POSTAuthorities": null,
+    "PUT": true,
+    "PUTAuthorities": null,
+    "DELETE": true,
+    "DELETEAuthorities": null,
+    "FILTER": true,
+    "FILTERAuthorities": null,
+    "COUNT": true,
+    "COUNTAuthorities": null
+  },
+  "events": {
+    "beforeInsert": null,
+    "beforeUpdate": null,
+    "beforeDelete": null,
+    "afterInsert": null,
+    "afterUpdate": null,
+    "afterDelete": null,
+    "onNavigate": null,
+    "onAuthorize": null,
+    "onError": null
+  },
+  "defaultValues": {
+    "id": null,
+    "palpiteSelecaoA": null,
+    "palpiteSelecaoB": null,
+    "selecaoCampea": null,
+    "pontuacao": null
+  },
+  "defaultValuesProperties": {
+    "id": null,
+    "palpiteSelecaoA": null,
+    "palpiteSelecaoB": null,
+    "selecaoCampea": null,
+    "pontuacao": null
+  },
+  "security": {
+    "id": null,
+    "palpiteSelecaoA": null,
+    "palpiteSelecaoB": null,
+    "selecaoCampea": null,
+    "pontuacao": null
+  },
+  "calcFields": {},
+  "calcFieldsSecurity": {},
+  "calcFieldsProperties": {},
+  "headers": {},
+  "errorHandles": {
+    "primaryKey": null,
+    "foreignKey": null
+  },
+  "serviceUrl": "api/cronapi/odata/v2/competicao/query123950/",
+  "audit": false,
+  "swagger": false
+}

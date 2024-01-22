@@ -1,0 +1,30 @@
+.rules-list {
+    margin-top: 25px;
+    list-style: none;
+    padding: 0;
+}
+
+.rules-list li {
+    border-top: 1px solid #c4c4c4;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 5px;
+}
+
+.rules-list li .title-rule {
+    color: #20284E;
+    font-weight: bold;
+    font-size: 16px;
+    display: flex;
+    flex-direction: row;
+}
+
+.rules-list li .title-rule .rule-point {
+    margin-left: 5px;
+    color: #14CC00;
+}
+
+.obs-rule {
+    text-align: center;
+    margin-top: 55px;
+}

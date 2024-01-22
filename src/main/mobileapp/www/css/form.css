@@ -1,0 +1,30 @@
+.crn-cup-label {
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    color: var(--black-color);
+    opacity: 0.75;
+    font-weight: bold;
+    margin: 0;
+    margin-left: 5px;
+    margin-bottom: 4px;
+}
+
+.crn-cup-title  {
+    color: var(--primary-color);
+    font-size: 23px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    margin-bottom: 25px !important;
+    margin-left: 5px !important;
+    border: none !important;
+}
+
+.crn-cup-img {
+    height: auto;
+    width: 160px;
+    position: fixed;
+    bottom: 0;
+    z-index: -1;
+    right: 0;
+}
+}

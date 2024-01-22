@@ -1,0 +1,58 @@
+<div id="starter" ng-init="" ng-destroy="" data-component="crn-start" screen-params=""><div class="bg">
+    <img atl="Pessoa chutando" src="img/pessoa-chutando.svg" class="img-background-login">
+    <div class="container-full">
+        <div class="container-fluid" id="container-fluid">
+            <div class="row siginPanel container-cadastro" id="component-holder">
+                <img alt="image" src="img/logo-cup.png" class="crn-image img-logo" style="object-fit: contain" object-fit="object-fit: contain;" xattr-position="" width="100px" height="100px" data-component="crn-image" id="crn-image-673516"><div class="login-view col-sm-7 col-xs-10 col-lg-4 col-md-4" style="margin-left: 0px;">
+                    <form ng-if="!vars.cadastroSucesso" class="form-validation ng-pristine ng-valid ng-valid-required" autocomplete="off" name="form" ng-submit="" role="form">
+                        <h1 class="title titulo_card crn-cup-title text-left h3" xattr-position="text-left" xattr-type="h3" data-component="crn-text-component" id="crn-text-component-signup">Novo cadastro</h1>
+
+                        <div class="component-holder ng-binding ng-scope col-xs-12 col-md-12" data-component="crn-textinput" id="crn-textinput-signupemail">
+                            <div class="form-group">
+                                <label for="signupEmail" class="ng-binding crn-cup-label">E-mail</label>
+                                <input type="email" mask="" mask-placeholder="" ng-required="false" ng-model="vars.email" id="signupEmail" class="form-control k-textbox ng-pristine ng-untouched ng-valid ng-empty ng-valid-required" placeholder="" autocomplete="email" autocorrect="off" autocapitalize="off">
+                            </div>
+                        </div>
+
+                        <div class="component-holder ng-binding ng-scope col-xs-12 col-md-12" data-component="crn-textinput" id="crn-textinput-signupusername">
+                            <div class="form-group">
+                                <label for="name" class="ng-binding crn-cup-label">Nome</label>
+                                <input type="text" mask="" mask-placeholder="" ng-required="false" ng-model="vars.nome" id="signupUsername" class="form-control k-textbox ng-pristine ng-untouched ng-valid ng-empty ng-valid-required" placeholder="" autocomplete="username" autocorrect="off" autocapitalize="off">
+                            </div>
+                        </div>
+
+                        <div class="component-holder ng-binding ng-scope col-xs-12 col-md-12" data-component="crn-textinput" id="crn-textinput-signuppassword">
+                            <div class="form-group">
+                                <label for="signupPassword" class="ng-binding crn-cup-label">Senha</label>
+                                <input type="password" mask="" mask-placeholder="" ng-required="false" ng-model="vars.senha" id="signupPassword" class="form-control k-textbox ng-pristine ng-untouched ng-valid ng-empty ng-valid-required" placeholder="" autocomplete="password" autocorrect="off" autocapitalize="off">
+                            </div>
+                        </div>
+
+                        <div class="component-holder ng-binding ng-scope col-xs-12 col-md-12" data-component="crn-textinput" id="crn-textinput-signupconfirmpassword">
+                            <div class="form-group">
+                                <label for="signupConfirmPassword" class="ng-binding crn-cup-label">Confirme sua senha</label>
+                                <input type="password" mask="" mask-placeholder="" ng-required="false" ng-model="vars.confirmaSenha" id="signupConfirmPassword" class="form-control k-textbox ng-pristine ng-untouched ng-valid ng-empty ng-valid-required" placeholder="" autocomplete="confirm-password" autocorrect="off" autocapitalize="off">
+                            </div>
+                        </div>
+
+                            <div class="messages">
+                                <div ng-show="message.error" class="help-block ng-binding ng-hide" data-container="true"> </div>
+                            </div>
+                                <button class="btn k-button btn-block color-dark-blue" role="button" aria-label="{{'Signup.view.Register' | translate}}" type="button" ng-disabled="form.$invalid || vm.dataLoading" ng-click="cronapi.client('js.blockly.UserControl.signUp').names('3a3ca4e0', '04d8e9d1', '164870cd', 'b019c901').run(vars.nome, vars.email, vars.senha, vars.confirmaSenha)" xattr-fullsize="btn-block" xattr-theme="btn-default" xattr-disabled="">
+                                    <span class="" text-theme="">Cadastrar</span>
+                                </button> 
+                            <a href="#" class="cron-link component-holder col-md-12 col-xs-12 crn-anchor-signup-back" target="_self" data-replace="true" data-component="crn-anchor" id="crn-anchor-signupback" style="text-align: center;">
+                                {{'Signup.view.Back' | translate}}
+                            </a>
+                    </form>
+                    <div ng-if="vars.cadastroSucesso" class="container-feedback-sign">
+                        <span class="title-sign">Cadastro finalizado com sucesso.</span>
+                        <a href="#" class="cron-link component-holder col-md-12 col-xs-12 crn-anchor-signup-back" target="_self" data-replace="true" data-component="crn-anchor" id="crn-anchor-signupback" style="text-align: center;">
+                                Ir para login
+                            </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div></div>

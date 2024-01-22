@@ -1,0 +1,26 @@
+<div id="starter" ng-init="cronapi.client('js.blockly.listaMinhaFinal.ListaMInhaFinal.listaMinhaFinal').run()" ng-destroy="" data-component="crn-start" screen-params=""><div class="container-ranking"> 
+  <div class="container-titulo"> 
+    <button class="botao-titulo" type="submit" ng-click="cronapi.callFunction('cronapi.screen.back').call()"><i class="glyphicon glyphicon-chevron-left botao-texto" icon-theme="" style="opacity: 0.5; font-size: 24px; font-weight: none"></i></button> 
+    <h2 class="titulo-ranking" data-component="crn-text-component" id="crn-text-component-184093">Palpites da Final</h2> 
+  </div> 
+  
+  <div class="component-holder ng-scope col-xs-12" data-component="crn-datasource"> 
+     
+  </div>
+  
+ <div data-component="crn-container" ng-click="cronapi.client('js.blockly.historico.Historico.visualizarHistoricoUsuario').names('pos', 'usr').run(key, usuario.id)" data-replace="true" id="crn-container-324408" class="" style="margin-top:8px;" ng-repeat="palpite in vars.listaMinhaFinal">
+    <div data-component="crn-container" data-replace="true" id="crn-container-324408" class="container-card-historico"> 
+      <div data-component="crn-container" data-replace="true" id="crn-container-293654" class="card-historico"> 
+        <div class="historico-partida minha-final">
+            <h3 class="minha-final" data-component="crn-label" id="crn-label-740024" style="color: rgb(0, 0, 0); font-size: 16px; margin: 0px; width: 140px;"><b>{{palpite.usuario}}</b></h3>
+        </div> 
+        <div class="historico-partida minha-final">
+            <h3 class="" data-component="crn-label" id="crn-label-740024" style="color: rgb(0, 0, 0); font-size: 16px; margin: 0px;">PALPITE FINAL: <b>{{palpite.palpiteSelecaoA.sigla}} x {{palpite.palpiteSelecaoB.sigla}}</b></h3>
+        </div> 
+        <div class="historico-partida minha-final">
+            <h3 class="" data-component="crn-label" id="crn-label-740024" style="color: rgb(0, 0, 0); font-size: 16px; margin: 0px;">PALPITE GANHADOR: <b>{{palpite.selecaoCampea.nome | uppercase}}</b></h3>
+        </div> 
+      </div> 
+    </div> 
+  </div>
+</div></div>

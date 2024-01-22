@@ -1,0 +1,139 @@
+.cartao{
+    display:flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 0px 6px #0000000F;
+    border: 1px transparent;
+    margin: 10px 0 10px;
+    height:275px;
+    width: 400px;
+    font-family: 'Roboto' !important;
+}
+
+.cartao__titulo{
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+.cartao__palpites{
+    font-size: 16px;
+    text-align: center;
+    margin-top:8px;
+    display: contents;
+}
+
+.cartao__subtitulo{
+    font-size: 12px;
+    text-align:center;
+    font-weight: bold;
+}
+
+.cartao__subtitulo span.status__encerrada {
+    color: #D14040;
+}
+
+.cartao__subtitulo span.status__andamento {
+    color: #4CB160;
+}
+
+.cartao__subtitulo span.status__proximo {
+    color: #FF7700;
+}
+
+.cartao__separador{
+    border-top: 1px solid #707070;
+    opacity:0.2;
+    margin: 20px 10px 20px 65px;
+}
+
+.cartao__resultado{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+ 
+}
+
+.mini-flag{
+    width:31px;
+    height:21px;
+    border: 1px solid #939598 !important;
+}
+
+.cartao__texto{
+    margin-left:5px;
+    opacity: 0.75;
+    color: black;
+    font-size: 16px;
+    font-weight:bold;
+   
+}
+
+.cartao__pais {
+    display: flex;
+    flex-direction: row;
+    margin-left: 20px;
+    width: 80%;
+}
+
+.partidas__listagem{
+    margin-right: 25px;
+}
+
+.partidas__container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.button-detail-match {
+    width: calc(100% - 20px);
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.partidas__data{
+    color: #000;
+    opacity: 0.5;
+    font-size: 16px;
+    margin-top: 15px;
+}
+
+.cartao__circulo{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin-right: 10px;
+    margin-bottom: 3px;
+}
+
+.cartao__circulo.status__proximo {
+    background: #FF7700;
+}
+
+.cartao__circulo.status__encerrada {
+    background: #D14040;
+}
+
+.cartao__circulo.status__andamento {
+    background: #4CB160;
+}
+
+.cartao__cabecalho{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 0;
+}
+
+.cartao__circulo.legenda__espaco {
+    margin-top: 0px;
+    margin-left: 8px;
+}
+
+.text-status-match {
+    font-size: 12px;
+    margin-left: -5px;
+}
+

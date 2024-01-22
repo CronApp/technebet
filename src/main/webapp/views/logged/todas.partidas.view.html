@@ -1,0 +1,390 @@
+<div id="starter" ng-init="cronapi.client('js.blockly.inicializacao.InicializacaoPartidas.partidasSemi').run()" ng-destroy="" data-component="crn-start" screen-params="">
+  <div class="component-holder ng-scope" data-component="crn-tabs" id="crn-tabs-355706"> 
+    <div class="ctn-tab"> 
+      <ul class="nav nav-tabs" role="tablist"> 
+        <li ng-click="cronapi.client('js.blockly.inicializacao.InicializacaoPartidas.partidasFaseGruposInit').run()" role="presentation" class=""><a data-target="#tab1-5426" role="tab" data-toggle="tab" data-container="true">Fase de Grupos</a></li> 
+        <li ng-click="cronapi.client('js.blockly.inicializacao.InicializacaoPartidas.partidasOitavas').run()" role="presentation" class=""><a data-target="#tab2-5426" role="tab" data-toggle="tab" data-container="true">Oitavas de Final</a></li> 
+        <li ng-click="cronapi.client('js.blockly.inicializacao.InicializacaoPartidas.partidasQuartas').run()" role="presentation" class=""><a data-target="#tab4306" role="tab" data-toggle="tab" data-container="true">Quartas de Final</a></li> 
+        <li ng-click="cronapi.client('js.blockly.inicializacao.InicializacaoPartidas.partidasSemi').run()" role="presentation" class=""><a data-target="#tab6019" role="tab" data-toggle="tab" data-container="true">Semifinais</a></li> 
+        <li ng-click="cronapi.client('js.blockly.inicializacao.InicializacaoPartidas.partidasTerceiroLugar').run()" role="presentation" class=""><a data-target="#tab4671" role="tab" data-toggle="tab" data-container="true">Terceiro Lugar</a></li> 
+        <li ng-click="cronapi.client('js.blockly.inicializacao.InicializacaoPartidas.partidasFinal').run()" role="presentation" class="active"><a data-target="#tab4521" role="tab" data-toggle="tab" data-container="true">Final</a></li> 
+      </ul> 
+      
+      <div class="tab-content"> 
+        <div role="tabpanel" class="tab-pane" id="tab1-5426"> 
+        <div class="form-group col-lg-4 col-md-4 col-sm-6 col-xs-12" style="margin-top: 10px;">
+        <label for="campoRodadaSelecionada" class="">Rodada</label>
+        <select placeholder="Selecione uma rodada..." ng-change="cronapi.client('js.blockly.inicializacao.InicializacaoPartidas.alterarRodadaSelecionada').run()" ng-model="vars.rodadaSelecionada" class="form-control select-viewer-match" id="campoRodadaSelecionada">
+          <option value="">Selecione uma rodada...</option>
+          <option ng-repeat="rodada in vars.listaRodadas" value="{{rodada.id}}">{{rodada.rodada}}</option>
+        </select>
+      </div>
+      <div class="form-group col-lg-4 col-md-4 col-sm-6 col-xs-12" style="margin-left: 5px; margin-top: 10px;">
+        <label for="campoSelecaoSelecionnada" class="">Seleção</label>
+        <select class="form-control select-viewer-match" ng-model="vars.selecaoSelecionada" ng-change="cronapi.client('js.blockly.inicializacao.InicializacaoPartidas.alterarSelecaoSelecionada').run()" id="campoSelecaoSelecionnada">
+          <option value="">Selecione uma seleção...</option>
+          <option ng-repeat="selecao in vars.listaSelecoes" value="{{selecao.id}}">{{selecao.nome}}</option>
+        </select>
+      </div>
+          <div data-container="true" data-replace="false" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <div class="cartao__legenda">
+              <p style="color:#000; opacity: 0.5; font-size: 12px">Legenda:</p>
+              <div style="display: flex">
+                    <div class="cartao__circulo status__encerrada legenda__espaco"></div>
+                    <p class="text-status-match">ENCERRADA</p>
+                    <div class="cartao__circulo status__andamento legenda__espaco"></div>
+                    <p class="text-status-match">EM ANDAMENTO</p>
+                    <div class="cartao__circulo status__proximo legenda__espaco"></div>
+                    <p class="text-status-match">PRÓXIMO INÍCIO</p>
+              </div>
+          </div>       
+          <div ng-repeat="(firstkey, data) in vars.partidasFaseGrupos.dados  | orderBy: 'data' ">
+                    <div class="partidas__data">
+                        <p>{{data.data | date:"dd/MM/yyyy"}}</p>
+                    </div>    
+                <div class="partidas__container">
+                  <div class="partidas__listagem" ng-repeat="(subkey, partida) in data.partidas"> 
+                    <div class="cartao"> 
+                      <div class="cartao__cabecalho">
+                          <div class="cartao__circulo {{partida.status_Partida.nome_status =='Em andamento' ? 'status__andamento' : '' || partida.status_Partida.nome_status =='Encerrada' ? 'status__encerrada' : ''  || partida.status_Partida.nome_status == 'Próximo início' ? 'status__proximo' : ''}}"></div>
+                          <p ng-if="partida.fase.nome_fase == 'Fase de Grupos'" class="cartao__titulo">{{partida.fase.nome_fase}} ({{partida.mandante.grupo.nome_grupo.substr(partida.mandante.grupo.nome_grupo.length-1, 1)}}) - {{partida.rodada.rodada || ''}}</p> 
+                          <p ng-if="partida.fase.nome_fase != 'Fase de Grupos'" class="cartao__titulo">{{partida.fase.nome_fase}}</p> 
+                      </div>
+                          <p class="cartao__subtitulo">{{partida.data_hora_partida | date:"dd/MM/yyyy 'às' HH:mm" : 'UTC'}} - <span class="{{partida.status_Partida.nome_status =='Em andamento' ? 'status__andamento' : '' || partida.status_Partida.nome_status =='Encerrada' ? 'status__encerrada' : ''  || partida.status_Partida.nome_status == 'Próximo início' ? 'status__proximo' : ''}}"> {{partida.status_Partida.nome_status}} </span> </p> 
+                      <div class="cartao__resultado"> 
+                        <div class="cartao__pais"> 
+                          <img class="mini-flag" src="{{partida.mandante.bandeira}}"> 
+                          <p class="cartao__texto">{{partida.mandante.nome}}</p> 
+                        </div> 
+                        <div class="cartao__placar"> 
+                          <p> {{partida.status_Partida.nome_status == 'Não iniciada' ? '' : partida.status_Partida.nome_status == 'Próximo início' ? ' ' : partida.gols_mandante}} {{partida.penalidades ? '(' + partida.penaltis_mandante + ')' : ''}}</p> 
+                        </div> 
+                      </div> 
+                      <div class="cartao__separador"></div> 
+                      <div class="cartao__resultado"> 
+                        <div class="cartao__pais"> 
+                          <img class="mini-flag" src="{{partida.visitante.bandeira}}"> 
+                          <p class="cartao__texto">{{partida.visitante.nome}}</p> 
+                        </div> 
+                        <div class="cartao__placar"> 
+                          <p> {{partida.status_Partida.nome_status == 'Não iniciada' ? '' : partida.status_Partida.nome_status == 'Próximo início' ? ' ' : partida.gols_visitante}} {{partida.penalidades ? '(' + partida.penaltis_visitante + ')' : ''}}</p> 
+                        </div> 
+                      </div> 
+                      <div style="font-size:16px; text-align:center; margin-top:8px;"> 
+                        <p class="cartao__palpites">Meu Palpite:</p> 
+                        <p class="cartao__palpites" style="font-weight:bold"> {{partida.possuiPalpite ? partida.palpiteMandante + ' x ' + partida.palpiteVisitante : ' - ' }} </p> 
+                      </div> 
+                      <div class="ng-scope button-detail-match" data-component="crn-button" id="crn-button-820534"> 
+                        <button class="btn k-button btn-block btn-info" ng-click="cronapi.client('js.blockly.palpite.Palpite.irTelaPalpite').names('e6a763e5').run(partida.id)" xattr-fullsize="btn-block" xattr-theme="btn-info" xattr-disabled=""><i class="" icon-theme=""></i> <span class="" text-theme=""> {{partida.partida_finalizada || partida.proximoInicio ? 'Ver Detalhes' : !partida.possuiPalpite &amp;&amp; partida.status_Partida.nome_status == 'Não iniciada' ? 'Adicionar palpite' : 'Editar palpite' }} </span></button> 
+                      </div> 
+                    </div> 
+                  </div> 
+                </div> 
+            </div>
+          </div> 
+        </div> 
+        <div role="tabpanel" class="tab-pane" id="tab2-5426"> 
+        <div data-container="true" data-replace="false" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <div class="cartao__legenda">
+              <p style="color:#000; opacity: 0.5; font-size: 12px">Legenda:</p>
+              <div style="display: flex">
+                    <div class="cartao__circulo status__encerrada legenda__espaco"></div>
+                    <p class="text-status-match">ENCERRADA</p>
+                    <div class="cartao__circulo status__andamento legenda__espaco"></div>
+                    <p class="text-status-match">EM ANDAMENTO</p>
+                    <div class="cartao__circulo status__proximo legenda__espaco"></div>
+                    <p class="text-status-match">PRÓXIMO INÍCIO</p>
+              </div>
+          </div>
+          <div class="" data-container="true" data-replace="false">
+             
+              <div ng-repeat="(firstkey, data) in vars.partidasOitavas.dados  | orderBy: 'data' ">
+                    <div class="partidas__data">
+                        <p>{{data.data | date:"dd/MM/yyyy"}}</p>
+                    </div>    
+                <div class="partidas__container">
+                  <div class="partidas__listagem" ng-repeat="(subkey, partida) in data.partidas"> 
+                    <div class="cartao"> 
+                      <div class="cartao__cabecalho">
+                          <div class="cartao__circulo {{partida.status_Partida.nome_status =='Em andamento' ? 'status__andamento' : '' || partida.status_Partida.nome_status =='Encerrada' ? 'status__encerrada' : ''  || partida.status_Partida.nome_status == 'Próximo início' ? 'status__proximo' : ''}}"></div>
+                          <p class="cartao__titulo">{{partida.fase.nome_fase}}</p> 
+                            
+                      </div>
+                          <p class="cartao__subtitulo">{{partida.data_hora_partida | date:"dd/MM/yyyy 'às' HH:mm" : 'UTC'}} - <span class="{{partida.status_Partida.nome_status =='Em andamento' ? 'status__andamento' : '' || partida.status_Partida.nome_status =='Encerrada' ? 'status__encerrada' : ''  || partida.status_Partida.nome_status == 'Próximo início' ? 'status__proximo' : ''}}"> {{partida.status_Partida.nome_status}} </span> </p> 
+                      <div class="cartao__resultado"> 
+                        <div class="cartao__pais"> 
+                          <img class="mini-flag" src="{{partida.mandante.bandeira}}"> 
+                          <p class="cartao__texto">{{partida.mandante.nome}}</p> 
+                        </div> 
+                        <div class="cartao__placar"> 
+                          <p> {{partida.status_Partida.nome_status == 'Não iniciada' ? '' : partida.status_Partida.nome_status == 'Próximo início' ? ' ' : partida.gols_mandante}} {{partida.penalidades ? '(' + partida.penaltis_mandante + ')' : ''}}</p> 
+                        </div> 
+                      </div> 
+                      <div class="cartao__separador"></div> 
+                      <div class="cartao__resultado"> 
+                        <div class="cartao__pais"> 
+                          <img class="mini-flag" src="{{partida.visitante.bandeira}}"> 
+                          <p class="cartao__texto">{{partida.visitante.nome}}</p> 
+                        </div> 
+                        <div class="cartao__placar"> 
+                          <p> {{partida.status_Partida.nome_status == 'Não iniciada' ? '' : partida.status_Partida.nome_status == 'Próximo início' ? ' ' : partida.gols_visitante}} {{partida.penalidades ? '(' + partida.penaltis_visitante + ')' : ''}}</p> 
+                        </div> 
+                      </div> 
+                      <div style="font-size:16px; text-align:center; margin-top:8px;"> 
+                        <p class="cartao__palpites">Meu Palpite:</p> 
+                        <p class="cartao__palpites" style="font-weight:bold"> {{partida.possuiPalpite ? partida.palpiteMandante + ' x ' + partida.palpiteVisitante : ' - ' }} </p> 
+                      </div> 
+                      <div class="ng-scope button-detail-match" data-component="crn-button" id="crn-button-820534"> 
+                        <button class="btn k-button btn-block btn-info" ng-click="cronapi.client('js.blockly.palpite.Palpite.irTelaPalpite').names('e6a763e5').run(partida.id)" xattr-fullsize="btn-block" xattr-theme="btn-info" xattr-disabled=""><i class="" icon-theme=""></i> <span class="" text-theme=""> {{partida.partida_finalizada || partida.proximoInicio ? 'Ver Detalhes' : !partida.possuiPalpite &amp;&amp; partida.status_Partida.nome_status == 'Não iniciada' ? 'Adicionar palpite' : 'Editar palpite' }} </span></button> 
+                      </div> 
+                    </div> 
+                  </div> 
+                </div> 
+            </div>
+            <!--<p data-component="crn-simple-text" id="crn-simple-text-249124" class="title-not-match text-center" xattr-position="text-center">Nenhum jogo definido</p>-->
+          </div> 
+          </div>
+        </div> 
+        <div role="tabpanel" class="tab-pane" id="tab4306">
+            <div class="cartao__legenda">
+              <p style="color:#000; opacity: 0.5; font-size: 12px">Legenda:</p>
+              <div style="display: flex">
+                    <div class="cartao__circulo status__encerrada legenda__espaco"></div>
+                    <p class="text-status-match">ENCERRADA</p>
+                    <div class="cartao__circulo status__andamento legenda__espaco"></div>
+                    <p class="text-status-match">EM ANDAMENTO</p>
+                    <div class="cartao__circulo status__proximo legenda__espaco"></div>
+                    <p class="text-status-match">PRÓXIMO INÍCIO</p>
+              </div>
+          </div> 
+          <div ng-if="vars.partidasQuartas.dados.length == 0" class="card-not-match" data-container="true"> 
+            <p data-component="crn-simple-text" id="crn-simple-text-2491241" class="title-not-match text-center" xattr-position="text-center">Nenhum jogo definido</p> 
+          </div>
+          <div ng-repeat="(firstkey, data) in vars.partidasQuartas.dados  | orderBy: 'data' ">
+                    <div class="partidas__data">
+                        <p>{{data.data | date:"dd/MM/yyyy"}}</p>
+                    </div>    
+                <div class="partidas__container">
+                  <div class="partidas__listagem" ng-repeat="(subkey, partida) in data.partidas"> 
+                    <div class="cartao"> 
+                      <div class="cartao__cabecalho">
+                          <div class="cartao__circulo {{partida.status_Partida.nome_status =='Em andamento' ? 'status__andamento' : '' || partida.status_Partida.nome_status =='Encerrada' ? 'status__encerrada' : ''  || partida.status_Partida.nome_status == 'Próximo início' ? 'status__proximo' : ''}}"></div>
+                          <p class="cartao__titulo">{{partida.fase.nome_fase}}</p> 
+                            
+                      </div>
+                          <p class="cartao__subtitulo">{{partida.data_hora_partida | date:"dd/MM/yyyy 'às' HH:mm" : 'UTC'}} - <span class="{{partida.status_Partida.nome_status =='Em andamento' ? 'status__andamento' : '' || partida.status_Partida.nome_status =='Encerrada' ? 'status__encerrada' : ''  || partida.status_Partida.nome_status == 'Próximo início' ? 'status__proximo' : ''}}"> {{partida.status_Partida.nome_status}} </span> </p> 
+                      <div class="cartao__resultado"> 
+                        <div class="cartao__pais"> 
+                          <img class="mini-flag" src="{{partida.mandante.bandeira}}"> 
+                          <p class="cartao__texto">{{partida.mandante.nome}}</p> 
+                        </div> 
+                        <div class="cartao__placar"> 
+                          <p> {{partida.status_Partida.nome_status == 'Não iniciada' ? '' : partida.status_Partida.nome_status == 'Próximo início' ? ' ' : partida.gols_mandante}} {{partida.penalidades ? '(' + partida.penaltis_mandante + ')' : ''}}</p> 
+                        </div> 
+                      </div> 
+                      <div class="cartao__separador"></div> 
+                      <div class="cartao__resultado"> 
+                        <div class="cartao__pais"> 
+                          <img class="mini-flag" src="{{partida.visitante.bandeira}}"> 
+                          <p class="cartao__texto">{{partida.visitante.nome}}</p> 
+                        </div> 
+                        <div class="cartao__placar"> 
+                          <p> {{partida.status_Partida.nome_status == 'Não iniciada' ? '' : partida.status_Partida.nome_status == 'Próximo início' ? ' ' : partida.gols_visitante}} {{partida.penalidades ? '(' + partida.penaltis_visitante + ')' : ''}}</p> 
+                        </div> 
+                      </div> 
+                      <div style="font-size:16px; text-align:center; margin-top:8px;"> 
+                        <p class="cartao__palpites">Meu Palpite:</p> 
+                        <p class="cartao__palpites" style="font-weight:bold"> {{partida.possuiPalpite ? partida.palpiteMandante + ' x ' + partida.palpiteVisitante : ' - ' }} </p> 
+                      </div> 
+                      <div class="ng-scope button-detail-match" data-component="crn-button" id="crn-button-820534"> 
+                        <button class="btn k-button btn-block btn-info" ng-click="cronapi.client('js.blockly.palpite.Palpite.irTelaPalpite').names('e6a763e5').run(partida.id)" xattr-fullsize="btn-block" xattr-theme="btn-info" xattr-disabled=""><i class="" icon-theme=""></i> <span class="" text-theme=""> {{partida.partida_finalizada || partida.proximoInicio ? 'Ver Detalhes' : !partida.possuiPalpite &amp;&amp; partida.status_Partida.nome_status == 'Não iniciada' ? 'Adicionar palpite' : 'Editar palpite' }} </span></button> 
+                      </div> 
+                    </div> 
+                  </div> 
+                </div> 
+            </div>
+        </div> 
+        
+        <div role="tabpanel" class="tab-pane" id="tab6019">
+            <div class="cartao__legenda">
+              <p style="color:#000; opacity: 0.5; font-size: 12px">Legenda:</p>
+              <div style="display: flex">
+                    <div class="cartao__circulo status__encerrada legenda__espaco"></div>
+                    <p class="text-status-match">ENCERRADA</p>
+                    <div class="cartao__circulo status__andamento legenda__espaco"></div>
+                    <p class="text-status-match">EM ANDAMENTO</p>
+                    <div class="cartao__circulo status__proximo legenda__espaco"></div>
+                    <p class="text-status-match">PRÓXIMO INÍCIO</p>
+              </div>
+          </div> 
+          <div ng-if="vars.partidasSemi.dados.length == 0" class="card-not-match" data-container="true"> 
+            <p data-component="crn-simple-text" id="crn-simple-text-2491242" class="title-not-match text-center" xattr-position="text-center">Nenhum jogo definido</p> 
+          </div>
+          <div ng-repeat="(firstkey, data) in vars.partidasSemi.dados  | orderBy: 'data' ">
+                    <div class="partidas__data">
+                        <p>{{data.data | date:"dd/MM/yyyy"}}</p>
+                    </div>    
+                <div class="partidas__container">
+                  <div class="partidas__listagem" ng-repeat="(subkey, partida) in data.partidas"> 
+                    <div class="cartao"> 
+                      <div class="cartao__cabecalho">
+                          <div class="cartao__circulo {{partida.status_Partida.nome_status =='Em andamento' ? 'status__andamento' : '' || partida.status_Partida.nome_status =='Encerrada' ? 'status__encerrada' : ''  || partida.status_Partida.nome_status == 'Próximo início' ? 'status__proximo' : ''}}"></div>
+                          <p class="cartao__titulo">{{partida.fase.nome_fase}}</p> 
+                            
+                      </div>
+                          <p class="cartao__subtitulo">{{partida.data_hora_partida | date:"dd/MM/yyyy 'às' HH:mm" : 'UTC'}} - <span class="{{partida.status_Partida.nome_status =='Em andamento' ? 'status__andamento' : '' || partida.status_Partida.nome_status =='Encerrada' ? 'status__encerrada' : ''  || partida.status_Partida.nome_status == 'Próximo início' ? 'status__proximo' : ''}}"> {{partida.status_Partida.nome_status}} </span> </p> 
+                      <div class="cartao__resultado"> 
+                        <div class="cartao__pais"> 
+                          <img class="mini-flag" src="{{partida.mandante.bandeira}}"> 
+                          <p class="cartao__texto">{{partida.mandante.nome}}</p> 
+                        </div> 
+                        <div class="cartao__placar"> 
+                          <p> {{partida.status_Partida.nome_status == 'Não iniciada' ? '' : partida.status_Partida.nome_status == 'Próximo início' ? ' ' : partida.gols_mandante}} {{partida.penalidades ? '(' + partida.penaltis_mandante + ')' : ''}}</p> 
+                        </div> 
+                      </div> 
+                      <div class="cartao__separador"></div> 
+                      <div class="cartao__resultado"> 
+                        <div class="cartao__pais"> 
+                          <img class="mini-flag" src="{{partida.visitante.bandeira}}"> 
+                          <p class="cartao__texto">{{partida.visitante.nome}}</p> 
+                        </div> 
+                        <div class="cartao__placar"> 
+                          <p> {{partida.status_Partida.nome_status == 'Não iniciada' ? '' : partida.status_Partida.nome_status == 'Próximo início' ? ' ' : partida.gols_visitante}} {{partida.penalidades ? '(' + partida.penaltis_visitante + ')' : ''}}</p> 
+                        </div> 
+                      </div> 
+                      <div style="font-size:16px; text-align:center; margin-top:8px;"> 
+                        <p class="cartao__palpites">Meu Palpite:</p> 
+                        <p class="cartao__palpites" style="font-weight:bold"> {{partida.possuiPalpite ? partida.palpiteMandante + ' x ' + partida.palpiteVisitante : ' - ' }} </p> 
+                      </div> 
+                      <div class="ng-scope button-detail-match" data-component="crn-button" id="crn-button-820534"> 
+                        <button class="btn k-button btn-block btn-info" ng-click="cronapi.client('js.blockly.palpite.Palpite.irTelaPalpite').names('e6a763e5').run(partida.id)" xattr-fullsize="btn-block" xattr-theme="btn-info" xattr-disabled=""><i class="" icon-theme=""></i> <span class="" text-theme=""> {{partida.partida_finalizada || partida.proximoInicio ? 'Ver Detalhes' : !partida.possuiPalpite &amp;&amp; partida.status_Partida.nome_status == 'Não iniciada' ? 'Adicionar palpite' : 'Editar palpite' }} </span></button> 
+                      </div> 
+                    </div> 
+                  </div> 
+                </div> 
+            </div>
+        </div> 
+        
+        <div role="tabpanel" class="tab-pane" id="tab4671">
+            <div class="cartao__legenda">
+              <p style="color:#000; opacity: 0.5; font-size: 12px">Legenda:</p>
+              <div style="display: flex">
+                    <div class="cartao__circulo status__encerrada legenda__espaco"></div>
+                    <p class="text-status-match">ENCERRADA</p>
+                    <div class="cartao__circulo status__andamento legenda__espaco"></div>
+                    <p class="text-status-match">EM ANDAMENTO</p>
+                    <div class="cartao__circulo status__proximo legenda__espaco"></div>
+                    <p class="text-status-match">PRÓXIMO INÍCIO</p>
+              </div>
+          </div> 
+          <div ng-if="vars.partidasTerceiroLugar.dados.length == 0" class="card-not-match" data-container="true"> 
+            <p data-component="crn-simple-text" id="crn-simple-text-2491243" class="title-not-match text-center" xattr-position="text-center">Nenhum jogo definido</p> 
+          </div>
+          <div ng-repeat="(firstkey, data) in vars.partidasTerceiroLugar.dados  | orderBy: 'data' ">
+                    <div class="partidas__data">
+                        <p>{{data.data | date:"dd/MM/yyyy"}}</p>
+                    </div>    
+                <div class="partidas__container">
+                  <div class="partidas__listagem" ng-repeat="(subkey, partida) in data.partidas"> 
+                    <div class="cartao"> 
+                      <div class="cartao__cabecalho">
+                          <div class="cartao__circulo {{partida.status_Partida.nome_status =='Em andamento' ? 'status__andamento' : '' || partida.status_Partida.nome_status =='Encerrada' ? 'status__encerrada' : ''  || partida.status_Partida.nome_status == 'Próximo início' ? 'status__proximo' : ''}}"></div>
+                          <p class="cartao__titulo">{{partida.fase.nome_fase}}</p> 
+                            
+                      </div>
+                          <p class="cartao__subtitulo">{{partida.data_hora_partida | date:"dd/MM/yyyy 'às' HH:mm" : 'UTC'}} - <span class="{{partida.status_Partida.nome_status =='Em andamento' ? 'status__andamento' : '' || partida.status_Partida.nome_status =='Encerrada' ? 'status__encerrada' : ''  || partida.status_Partida.nome_status == 'Próximo início' ? 'status__proximo' : ''}}"> {{partida.status_Partida.nome_status}} </span> </p> 
+                      <div class="cartao__resultado"> 
+                        <div class="cartao__pais"> 
+                          <img class="mini-flag" src="{{partida.mandante.bandeira}}"> 
+                          <p class="cartao__texto">{{partida.mandante.nome}}</p> 
+                        </div> 
+                        <div class="cartao__placar"> 
+                          <p> {{partida.status_Partida.nome_status == 'Não iniciada' ? '' : partida.status_Partida.nome_status == 'Próximo início' ? ' ' : partida.gols_mandante}} {{partida.penalidades ? '(' + partida.penaltis_mandante + ')' : ''}}</p> 
+                        </div> 
+                      </div> 
+                      <div class="cartao__separador"></div> 
+                      <div class="cartao__resultado"> 
+                        <div class="cartao__pais"> 
+                          <img class="mini-flag" src="{{partida.visitante.bandeira}}"> 
+                          <p class="cartao__texto">{{partida.visitante.nome}}</p> 
+                        </div> 
+                        <div class="cartao__placar"> 
+                          <p> {{partida.status_Partida.nome_status == 'Não iniciada' ? '' : partida.status_Partida.nome_status == 'Próximo início' ? ' ' : partida.gols_visitante}} {{partida.penalidades ? '(' + partida.penaltis_visitante + ')' : ''}}</p> 
+                        </div> 
+                      </div> 
+                      <div style="font-size:16px; text-align:center; margin-top:8px;"> 
+                        <p class="cartao__palpites">Meu Palpite:</p> 
+                        <p class="cartao__palpites" style="font-weight:bold"> {{partida.possuiPalpite ? partida.palpiteMandante + ' x ' + partida.palpiteVisitante : ' - ' }} </p> 
+                      </div> 
+                      <div class="ng-scope button-detail-match" data-component="crn-button" id="crn-button-820534"> 
+                        <button class="btn k-button btn-block btn-info" ng-click="cronapi.client('js.blockly.palpite.Palpite.irTelaPalpite').names('e6a763e5').run(partida.id)" xattr-fullsize="btn-block" xattr-theme="btn-info" xattr-disabled=""><i class="" icon-theme=""></i> <span class="" text-theme=""> {{partida.partida_finalizada || partida.proximoInicio ? 'Ver Detalhes' : !partida.possuiPalpite &amp;&amp; partida.status_Partida.nome_status == 'Não iniciada' ? 'Adicionar palpite' : 'Editar palpite' }} </span></button> 
+                      </div> 
+                    </div> 
+                  </div> 
+                </div> 
+            </div>
+        </div>
+        
+        <div role="tabpanel" class="tab-pane active" id="tab4521">
+            <div class="cartao__legenda">
+              <p style="color:#000; opacity: 0.5; font-size: 12px">Legenda:</p>
+              <div style="display: flex">
+                    <div class="cartao__circulo status__encerrada legenda__espaco"></div>
+                    <p class="text-status-match">ENCERRADA</p>
+                    <div class="cartao__circulo status__andamento legenda__espaco"></div>
+                    <p class="text-status-match">EM ANDAMENTO</p>
+                    <div class="cartao__circulo status__proximo legenda__espaco"></div>
+                    <p class="text-status-match">PRÓXIMO INÍCIO</p>
+              </div>
+          </div> 
+          <div ng-if="vars.partidasFinal.dados.length == 0" class="card-not-match" data-container="true"> 
+            <p data-component="crn-simple-text" id="crn-simple-text-2491245" class="title-not-match text-center" xattr-position="text-center">Nenhum jogo definido</p> 
+          </div>
+          <div ng-repeat="(firstkey, data) in vars.partidasFinal.dados  | orderBy: 'data' ">
+                    <div class="partidas__data">
+                        <p>{{data.data | date:"dd/MM/yyyy"}}</p>
+                    </div>    
+                <div class="partidas__container">
+                  <div class="partidas__listagem" ng-repeat="(subkey, partida) in data.partidas"> 
+                    <div class="cartao"> 
+                      <div class="cartao__cabecalho">
+                          <div class="cartao__circulo {{partida.status_Partida.nome_status =='Em andamento' ? 'status__andamento' : '' || partida.status_Partida.nome_status =='Encerrada' ? 'status__encerrada' : ''  || partida.status_Partida.nome_status == 'Próximo início' ? 'status__proximo' : ''}}"></div>
+                          <p class="cartao__titulo">{{partida.fase.nome_fase}}</p> 
+                            
+                      </div>
+                          <p class="cartao__subtitulo">{{partida.data_hora_partida | date:"dd/MM/yyyy 'às' HH:mm" : 'UTC'}} - <span class="{{partida.status_Partida.nome_status =='Em andamento' ? 'status__andamento' : '' || partida.status_Partida.nome_status =='Encerrada' ? 'status__encerrada' : ''  || partida.status_Partida.nome_status == 'Próximo início' ? 'status__proximo' : ''}}"> {{partida.status_Partida.nome_status}} </span> </p> 
+                      <div class="cartao__resultado"> 
+                        <div class="cartao__pais"> 
+                          <img class="mini-flag" src="{{partida.mandante.bandeira}}"> 
+                          <p class="cartao__texto">{{partida.mandante.nome}}</p> 
+                        </div> 
+                        <div class="cartao__placar"> 
+                          <p> {{partida.status_Partida.nome_status == 'Não iniciada' ? '' : partida.status_Partida.nome_status == 'Próximo início' ? ' ' : partida.gols_mandante}} {{partida.penalidades ? '(' + partida.penaltis_mandante + ')' : ''}}</p> 
+                        </div> 
+                      </div> 
+                      <div class="cartao__separador"></div> 
+                      <div class="cartao__resultado"> 
+                        <div class="cartao__pais"> 
+                          <img class="mini-flag" src="{{partida.visitante.bandeira}}"> 
+                          <p class="cartao__texto">{{partida.visitante.nome}}</p> 
+                        </div> 
+                        <div class="cartao__placar"> 
+                          <p> {{partida.status_Partida.nome_status == 'Não iniciada' ? '' : partida.status_Partida.nome_status == 'Próximo início' ? ' ' : partida.gols_visitante}} {{partida.penalidades ? '(' + partida.penaltis_visitante + ')' : ''}}</p> 
+                        </div> 
+                      </div> 
+                      <div style="font-size:16px; text-align:center; margin-top:8px;"> 
+                        <p class="cartao__palpites">Meu Palpite:</p> 
+                        <p class="cartao__palpites" style="font-weight:bold"> {{partida.possuiPalpite ? partida.palpiteMandante + ' x ' + partida.palpiteVisitante : ' - ' }} </p> 
+                      </div> 
+                      <div class="ng-scope button-detail-match" data-component="crn-button" id="crn-button-820534"> 
+                        <button class="btn k-button btn-block btn-info" ng-click="cronapi.client('js.blockly.palpite.Palpite.irTelaPalpite').names('e6a763e5').run(partida.id)" xattr-fullsize="btn-block" xattr-theme="btn-info" xattr-disabled=""><i class="" icon-theme=""></i> <span class="" text-theme=""> {{partida.partida_finalizada || partida.proximoInicio ? 'Ver Detalhes' : !partida.possuiPalpite &amp;&amp; partida.status_Partida.nome_status == 'Não iniciada' ? 'Adicionar palpite' : 'Editar palpite' }} </span></button> 
+                      </div> 
+                    </div> 
+                  </div> 
+                </div> 
+            </div>
+        </div>
+        </div> 
+      </div> 
+    </div> 
+  </div>

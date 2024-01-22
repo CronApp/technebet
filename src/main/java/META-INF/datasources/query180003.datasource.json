@@ -1,0 +1,130 @@
+{
+  "customId": "equipePenaltis",
+  "queryName": "Equipe Penaltis",
+  "sourceType": "entityFullName",
+  "baseEntity": null,
+  "blockly": null,
+  "entitySimpleName": "Equipe",
+  "entityFullName": "competicao.entity.Equipe",
+  "query": {
+    "isValid": true,
+    "isEmpty": false,
+    "operationType": "object",
+    "isNativeQuery": false,
+    "namespace": "competicao",
+    "type": "select",
+    "rulesEntity": [
+      {
+        "entity": "Equipe",
+        "namespace": "competicao.entity.Equipe",
+        "alias": "e"
+      }
+    ],
+    "rulesSelect": [
+      {
+        "func": "get",
+        "field": "e",
+        "type": "string"
+      }
+    ],
+    "rulesGroupBy": [],
+    "rulesHaving": [],
+    "rulesOrderBy": [
+      {
+        "func": "get",
+        "field": "e.nome",
+        "order": "asc"
+      }
+    ],
+    "rules": {
+      "condition": "AND",
+      "rules": [],
+      "not": false,
+      "valid": true
+    },
+    "isRawSql": false,
+    "multiTenant": false,
+    "paginatorAutomatic": false,
+    "pagination": false
+  },
+  "queryParamsValues": [],
+  "verbs": {
+    "GET": true,
+    "GETAuthorities": null,
+    "POST": true,
+    "POSTAuthorities": null,
+    "PUT": true,
+    "PUTAuthorities": null,
+    "DELETE": true,
+    "DELETEAuthorities": null,
+    "FILTER": true,
+    "FILTERAuthorities": null,
+    "COUNT": true,
+    "COUNTAuthorities": null
+  },
+  "events": {
+    "beforeInsert": null,
+    "beforeUpdate": null,
+    "beforeDelete": null,
+    "afterInsert": null,
+    "afterUpdate": null,
+    "afterDelete": null,
+    "onNavigate": null,
+    "onAuthorize": null,
+    "onError": null
+  },
+  "defaultValues": {
+    "id": null,
+    "nome": null,
+    "pontuacao": null,
+    "classificado_eliminatoria": null,
+    "fase": null,
+    "colocacao_final": null,
+    "colocacao_grupo": null,
+    "gols_pro": null,
+    "gols_contra": null,
+    "sigla": null,
+    "bandeira": null,
+    "grupo": null
+  },
+  "defaultValuesProperties": {
+    "id": null,
+    "nome": null,
+    "pontuacao": null,
+    "classificado_eliminatoria": null,
+    "fase": null,
+    "colocacao_final": null,
+    "colocacao_grupo": null,
+    "gols_pro": null,
+    "gols_contra": null,
+    "sigla": null,
+    "bandeira": null,
+    "grupo": null
+  },
+  "security": {
+    "id": null,
+    "nome": null,
+    "pontuacao": null,
+    "classificado_eliminatoria": null,
+    "fase": null,
+    "colocacao_final": null,
+    "colocacao_grupo": null,
+    "gols_pro": null,
+    "gols_contra": null,
+    "sigla": null,
+    "bandeira": null,
+    "grupo": null
+  },
+  "calcFields": {},
+  "calcFieldsSecurity": {},
+  "calcFieldsProperties": {},
+  "headers": {},
+  "errorHandles": {
+    "primaryKey": null,
+    "foreignKey": null
+  },
+  "serviceUrl": "api/cronapi/odata/v2/competicao/query180003/",
+  "audit": false,
+  "swagger": false,
+  "library": false
+}

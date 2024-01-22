@@ -1,0 +1,44 @@
+<ion-view role="region" aria-labelledby="login_page_title" cache-view="false" can-swipe-back="false" class="pane login-bg" data-container="true">
+  <h1 class="sr-only" id="login_page_title">{{"Users.view.Login" | translate}}</h1>
+  <ion-content class="scroll-content center-content-vertically" data-component="crn-ion-content">
+    <div class="list safe-top" data-container="true">
+      <div class="col text-center">
+        <img aria-roledescription="logo" alt="{{'Accessibility.Login.Logo.Alt' | translate}}" src="img/logo.png" class="component-holder logo" style="display: block; margin-left:auto; margin-right:auto;" xattr-position="display: block; margin-left:auto; margin-right:auto;" data-component="crn-image" id="crn-image-960683">
+      </div>
+    </div>
+    <form class="form-validation" autocomplete="off" name="form" role="form">
+      <input type="hidden" name="csrf_token" value="CIwNZNlR4XbisJF39I8yWnWX9wX4WFoz">
+      <div class="list list-inset login-mobile" data-container="true">
+
+        <h2 class="font-size-default text-left crn-cup-label" xattr-position="text-left" subtitle-size="font-size-default" data-component="crn-label" id="crn-label-465123">E-mail</h2><div class="item item-input component-holder" data-component="crn-input" for="crn-input-username" title="{{'Login.view.Username' | translate}}" id="lbl-input-username">
+          <input aria-label="{{'Login.view.Username' | translate}}" autocomplete="username" autocorrect="off" autocapitalize="off" type="text" placeholder="ex: maria@gmail.com" ng-model="vars.username" id="crn-input-username" keyboard="username">
+        </div>
+
+        <h2 class="font-size-default text-left crn-cup-label" xattr-position="text-left" subtitle-size="font-size-default" data-component="crn-label" id="crn-label-415183">Senha</h2><div class="item item-input component-holder" data-component="crn-input" for="crn-input-password" title="{{'Login.view.Password' | translate}}" id="lbl-input-password">
+          <input aria-label="{{'Login.view.Password' | translate}}" autocomplete="current-password" type="password" placeholder="***************" ng-model="vars.password" id="crn-input-password" keyboard="password">
+        </div>
+
+        <div class="item">
+          <a href="#/app/public/reset-password-email" class="component-holder" style="display:block" xattr-fullsize="display:block;" data-replace="true" data-component="crn-anchor" id="reset-password-login" on-hold="" on-tap="">Esqueci minha senha?</a>
+        </div>
+
+        <div class="item" title="{{'Login.view.Login' | translate}}" for="crn-button-445347">
+          <button role="button" aria-label="{{'Login.view.Login' | translate}}" class="button button-block button-medium filled button-default" type="button" xattr-fullsize="button-block" xattr-theme="button-default" ng-click="cronapi.client('js.blockly.auth.Login.login').run(vars.username, vars.password, null)" data-component="crn-button" xattr-size="button-medium" xattr-type="filled" id="crn-button-907928" ng-disabled="form.$invalid || vm.dataLoading">
+            <i class="light" xattr-icon-theme="light"></i>
+            <span>Entrar</span></button><button class="button button-block button-medium filled button-stable" type="submit" xattr-fullsize="button-block" xattr-theme="button-stable" ng-click="cronapi.screen.changeView('#/app/public/signup', [])" data-component="crn-button" xattr-size="button-medium" xattr-type="filled" id="crn-button-369036"><i class="" xattr-icon-theme=""></i> <span>Cadastre-se</span></button>
+        </div>
+
+        <div class="item">
+          
+        </div>
+
+        <div class="item" title="{{message.error}}">
+          <div ng-show="message.error" class="help-block" data-container="true">
+            {{message.error}}
+          </div>
+        </div>
+
+      </div>
+    </form>
+  <img alt="Placehold" src="img/pessoa-chutando.svg" class="crn-cup-img" style="object-fit: cover;" xattr-position="" width="100%" height="" object-fit="object-fit: cover;" data-component="crn-image" id="crn-image-731702"></ion-content>
+</ion-view>

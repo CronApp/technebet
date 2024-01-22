@@ -1,0 +1,29 @@
+<div id="starter" ng-init="cronapi.client('js.blockly.usuario.BuscarUsuario.preencherInfoUsuario').run()" ng-destroy="" data-component="crn-start" screen-params="">
+  <datasource data-component="crn-datasource" name="User" entity="app.User" keys="_objectKey" rows-per-page="100" on-before-create="" on-after-create="" on-before-update="" on-after-update="" on-before-delete="" on-after-delete="" on-after-fill="" lazy="true" schema="[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;accessFailedCount&quot;,&quot;type&quot;:&quot;Int32&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;email&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;emailConfirmed&quot;,&quot;type&quot;:&quot;Boolean&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;lockoutEnabled&quot;,&quot;type&quot;:&quot;Boolean&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;lockoutEnd&quot;,&quot;type&quot;:&quot;DateTime&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;name&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;normalizedEmail&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;normalizedUserName&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;password&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;phoneNumber&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;phoneNumberConfirmed&quot;,&quot;type&quot;:&quot;Boolean&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;securityStamp&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;twoFactorEnabled&quot;,&quot;type&quot;:&quot;Boolean&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;userName&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;theme&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;picture&quot;,&quot;type&quot;:&quot;Binary&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;pontuacao&quot;,&quot;type&quot;:&quot;Int32&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;_objectKey&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:true}]" condition=""></datasource>
+  <h1 class="title text-center h3" xattr-position="text-center" xattr-type="h3" data-component="crn-text-component" id="crn-text-component-222280" style="width: 549px; height: 43px;">Meu Perfil</h1>
+  <div class="component-holder ng-scope" data-component="crn-textinput" id="crn-textinput-name">
+    <div class="form-group">
+      <label for="input8253">Nome</label>
+      <input type="text" mask="" mask-placeholder="" ng-required="false" ng-model="vars.name" class="form-control k-textbox" id="input8253" placeholder="Digite seu nome completo" ng-disabled="true">
+    </div>
+  </div>
+  <div class="component-holder ng-scope" data-component="crn-textinput" id="crn-textinput-email">
+    <div class="form-group">
+      <label for="input3001">E-mail</label>
+      <input type="text" mask="" mask-placeholder="" ng-required="false" ng-model="vars.email" class="form-control k-textbox" id="input3001" placeholder="Digite seu e-mail" ng-disabled="true">
+    </div>
+  </div>
+  <div class="component-holder ng-scope" data-component="crn-button" id="crn-button-salvar" ng-show="false">
+    <button class="btn k-button btn-block btn-default" ng-click="cronapi.client('js.blockly.usuario.BuscarUsuario.salvarAlteracoes').run()" xattr-fullsize="btn-block" xattr-theme="btn-default" xattr-disabled=""><i class="" icon-theme=""></i> <span class="" text-theme="">Salvar</span></button>
+  </div>
+  <div class="component-holder ng-scope" data-component="crn-button" id="crn-button-editar">
+    <button class="btn k-button btn-block btn-default" ng-click="cronapi.client('js.blockly.usuario.BuscarUsuario.editarUsuario').run()" xattr-fullsize="btn-block" xattr-theme="btn-default" xattr-disabled=""><i class="text-color-default" icon-theme="text-color-default"></i> <span class="" text-theme="">Editar</span></button>
+  </div>
+  <div class="component-holder ng-scope" data-component="crn-button" id="crn-button-cancelar" ng-show="false">
+    <button class="btn k-button btn-block btn-info" ng-click="cronapi.client('js.blockly.usuario.BuscarUsuario.cancelarEdicao').run()" xattr-fullsize="btn-block" xattr-theme="btn-info" xattr-disabled=""><i class="" icon-theme=""></i> <span class="" text-theme="">Cancelar</span></button>
+  </div>
+  <div class="component-holder ng-scope" data-component="crn-button" id="crn-button-redefinir">
+    <button class="btn k-button btn-block btn-info" ng-click="cronapi.client('js.blockly.home.Home.abrirModalSenha').run()" xattr-fullsize="btn-block" xattr-theme="btn-info" xattr-disabled=""><i class="" icon-theme=""></i> <span class="" text-theme="">Redefinir senha</span></button>
+  </div>
+  <p data-component="crn-simple-text" id="crn-simple-text-excluirConta" xattr-position="text-center" class="text-center" ng-click="cronapi.client('js.blockly.usuario.BuscarUsuario.exclusaoConta').run()">Excluir conta</p>
+</div>

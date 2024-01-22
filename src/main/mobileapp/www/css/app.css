@@ -1,0 +1,13 @@
+@import 'form.css';
+@import 'ranking.css';
+@import 'cards.css';
+
+:root {
+  --primary-color: #20284E;
+  --black-color: #000000;
+}
+
+ion-content button {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

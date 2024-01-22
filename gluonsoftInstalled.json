@@ -1,0 +1,91 @@
+[
+  {
+    "gluonsoftId": "7AE84DDB-B61D-4D0D-9F83-23BABDEED364",
+    "versionId": "25145CE8-1C0B-403F-80C6-B89ECB6E08ED",
+    "name": "Cronapp PWA",
+    "version": "1.0.2",
+    "dateAdded": "2022-11-14 17:54:42",
+    "filesMerged": [
+      {
+        "name": "www",
+        "path": "/src/main/mobileapp/www",
+        "npmDependencies": [
+          {
+            "name": "cronapp_pwa",
+            "version": "1.0.2"
+          }
+        ]
+      },
+      {
+        "name": "index.html",
+        "path": "/src/main/mobileapp/www/index.html",
+        "htmlDependencies": [
+          {
+            "src": "node_modules/cronapp_pwa/src/PWA.cronapi.js",
+            "type": "script"
+          }
+        ]
+      },
+      {
+        "name": "index.html",
+        "path": "/src/main/mobileapp/www/index.html",
+        "htmlDependencies": [
+          {
+            "src": "node_modules/cronapp_pwa/src/pwa_register.js",
+            "type": "script"
+          }
+        ]
+      },
+      {
+        "name": "index.html",
+        "path": "/src/main/mobileapp/www/index.html",
+        "htmlDependencies": [
+          {
+            "src": "\u003clink rel\u003d\u0027manifest\u0027 href\u003d\u0027js/manifest.json\u0027\u003e",
+            "type": "custom"
+          }
+        ]
+      },
+      {
+        "name": "webapp",
+        "path": "/src/main/webapp",
+        "npmDependencies": [
+          {
+            "name": "cronapp_pwa",
+            "version": "1.0.2"
+          }
+        ]
+      },
+      {
+        "name": "index.html",
+        "path": "/src/main/webapp/index.html",
+        "htmlDependencies": [
+          {
+            "src": "node_modules/cronapp_pwa/src/PWA.cronapi.js",
+            "type": "script"
+          }
+        ]
+      },
+      {
+        "name": "index.html",
+        "path": "/src/main/webapp/index.html",
+        "htmlDependencies": [
+          {
+            "src": "node_modules/cronapp_pwa/src/pwa_register.js",
+            "type": "script"
+          }
+        ]
+      },
+      {
+        "name": "index.html",
+        "path": "/src/main/webapp/index.html",
+        "htmlDependencies": [
+          {
+            "src": "\u003clink rel\u003d\u0027manifest\u0027 href\u003d\u0027js/manifest.json\u0027\u003e",
+            "type": "custom"
+          }
+        ]
+      }
+    ]
+  }
+]

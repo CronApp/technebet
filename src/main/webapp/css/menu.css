@@ -1,0 +1,72 @@
+.navbar-header {
+    position: relative;
+    height: 250px;
+}
+
+#crn-navbar-logo {
+    position: absolute;
+    width: 144px;
+    height: auto;
+    top: 50px;
+    left: 50px;
+}
+
+.crn-navigator-vertical {
+    background: #fff;
+}
+
+.crn-navigator-vertical>.navbar>.container-fluid>#navbar {
+    background: #fff;
+}
+
+.navbar-default #navbar .navbar-nav li a, .navbar-default #navbar2 .navbar-nav li a {
+    color: var(--primary-color);
+}
+
+.navbar-default .navbar-nav a span {
+    font-weight: bold;
+}
+.navbar-default #navbar .navbar-nav li a:focus, .navbar-default #navbar .navbar-nav li a:active, .navbar-default #navbar .navbar-nav li a:hover, .navbar-default #navbar .navbar-nav li a:focus-within {
+    color: #fff;
+}
+
+#navbar2 {
+    border: none;
+}
+
+.crn-navigator-vertical>.navbar>.container-fluid .navbar-collapse, .crn-navigator-vertical>.navbar>.container-fluid .navbar-header, .crn-navigator-vertical>.navbar>.container-fluid>.navbar-collapse, .crn-navigator-vertical>.navbar>.container-fluid>.navbar-header {
+    background: #fff;
+}
+
+.crn-navigator-vertical .navbar-default #navbar .navbar-nav li .dropdown-menu a, .crn-navigator-vertical .navbar-default #navbar2 .navbar-nav li .dropdown-menu a {
+    color: var(--primary-color);
+}
+
+.navbar-default .navbar-toggle {
+    background: var(--primary-color);
+}
+
+.navbar-default #navbar .navbar-nav li a:hover, .navbar-default #navbar2 .navbar-nav li a:hover, .navbar-default #navbar .navbar-nav li .dropdown-menu li a:hover, .navbar-default #navbar2 .navbar-nav li .dropdown-menu li a:hover, .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+    background: transparent;
+    color: var(--primary-color);
+}
+
+@media (max-width: 766px) {
+    #crn-navbar-logo {
+        position: absolute;
+        width: 72px;
+        height: auto;
+        top: 25px;
+        left: 25px;
+
+    }
+
+    .navbar-header {
+        position: relative;
+        height: 125px;
+    }
+
+    .navbar-default #navbar .navbar-nav li a:hover>i, .navbar-default #navbar2 .navbar-nav li a:hover>i, .navbar-default #navbar .navbar-nav li .dropdown-menu li a:hover>i, .navbar-default #navbar2 .navbar-nav li .dropdown-menu li a:hover>i, .navbar-default #navbar .navbar-nav li a:hover>span, .navbar-default #navbar2 .navbar-nav li a:hover>span, .navbar-default #navbar .navbar-nav li .dropdown-menu li a:hover>span, .navbar-default #navbar2 .navbar-nav li .dropdown-menu li a:hover>span {
+        color: var(--primary-color);
+    }
+}
