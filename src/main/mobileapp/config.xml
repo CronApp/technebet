@@ -127,5 +127,5 @@
             <string>The App would like to have access to user’s Reminders in order to show and add new appointments.</string>
         </config-file>
     </platform>
-    <plugin name="cordova-plugin-cronapp" spec="3.0.0-SP.9"/>
+    <plugin name="cordova-plugin-cronapp" spec="3.2.1-SP.2"/>
 </widget>
