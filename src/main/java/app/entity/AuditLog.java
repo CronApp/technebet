@@ -2,7 +2,7 @@
 package app.entity;
 
 import java.io.*;
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.*;
 import javax.xml.bind.annotation.*;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -15,8 +15,8 @@ import cronapi.swagger.CronappSwagger;
 * Classe que representa a tabela AUDIT_LOG
 * @generated
 */
-@javax.persistence.Entity
-@javax.persistence.Table(name = "\"AUDIT_LOG\"")
+@jakarta.persistence.Entity
+@jakarta.persistence.Table(name = "\"AUDIT_LOG\"")
 @XmlRootElement
 @CronappSecurity(post = "Administrators", get = "Administrators", delete = "Administrators", put = "Administrators")
 @JsonFilter("app.entity.AuditLog")

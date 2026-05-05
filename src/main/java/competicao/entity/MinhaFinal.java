@@ -2,7 +2,7 @@
 package competicao.entity;
 
 import java.io.*;
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.*;
 import javax.xml.bind.annotation.*;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -15,8 +15,8 @@ import cronapi.swagger.CronappSwagger;
 * Classe que representa a tabela MINHAFINAL
 * @generated
 */
-@javax.persistence.Entity
-@javax.persistence.Table(name = "\"MINHAFINAL\"")
+@jakarta.persistence.Entity
+@jakarta.persistence.Table(name = "\"MINHAFINAL\"")
 @XmlRootElement
 @CronappSecurity
 @JsonFilter("competicao.entity.MinhaFinal")

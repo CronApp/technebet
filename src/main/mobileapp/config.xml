@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><widget xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" id="io.cronapp.apps.bolaocopa" version="1.0.0">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" id="io.cronapp.apps.bolaocopa" version="1.0.0">
     <name>Bolao Copa</name>
     <description>Bolao Copa</description>
     <author email="matheus.ribeiro@cronapp.io" href="http://cronapp.io">Matheus Portugal Ribeiro</author>
@@ -127,5 +128,5 @@
             <string>The App would like to have access to user’s Reminders in order to show and add new appointments.</string>
         </config-file>
     </platform>
-    <plugin name="cordova-plugin-cronapp" spec="3.2.1-SP.2"/>
+    <plugin name="cordova-plugin-cronapp" spec="4.2.24"/>
 </widget>
