@@ -2,7 +2,7 @@
 package competicao.entity;
 
 import java.io.*;
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.*;
 import javax.xml.bind.annotation.*;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -15,8 +15,8 @@ import cronapi.swagger.CronappSwagger;
 * Classe que representa a tabela LOGPALPITE
 * @generated
 */
-@javax.persistence.Entity
-@javax.persistence.Table(name = "\"LOGPALPITE\"")
+@jakarta.persistence.Entity
+@jakarta.persistence.Table(name = "\"LOGPALPITE\"")
 @XmlRootElement
 @CronappSecurity
 @JsonFilter("competicao.entity.LogPalpite")

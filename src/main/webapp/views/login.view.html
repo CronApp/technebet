@@ -1,5 +1,5 @@
-<div class="bg">
-    <img atl="Pessoa chutando" src="img/pessoa-chutando.svg" class="img-background-login"/>
+<div id="starter" ng-init="" ng-destroy="" data-component="crn-start" screen-params="" screen-variables=""><div class="bg">
+    <img atl="Pessoa chutando" src="img/pessoa-chutando.svg" class="img-background-login">
     <div class="container-full">
         <div class="container-fluid" id="container-fluid">
             <div class="row component-holder siginPanel" id="component-holder">
@@ -39,7 +39,7 @@
                             </div>
                         </div>
                             <div class="component-holder ng-scope col-xs-12 col-md-12" data-component="crn-button" id="crn-button-login">
-                                <button aria-label="{{'Login.view.Login' | translate}}" class="btn k-button btn-block color-dark-blue" type="button" ng-disabled="form.$invalid || vm.dataLoading" xattr-fullsize="btn-block" xattr-theme="color-dark-blue" xattr-disabled="" ng-click="cronapi.client('js.blockly.usuario.Usuario.login').run()">
+                                <button aria-label="{{'Login.view.Login' | translate}}" class="btn k-button btn-block color-dark-blue" type="button" ng-disabled="form.$invalid || vm.dataLoading" xattr-fullsize="btn-block" xattr-theme="color-dark-blue" xattr-disabled="" ng-click="login()">
                                     <span class="" text-theme="">Entrar</span>
                                 </button>
                             </div><div class="component-holder ng-scope col-xs-12 col-md-12" data-component="crn-button" id="crn-button-292816"><button type="button" class="btn k-button btn-block btn-info" ng-click="cronapi.screen.changeView('#/home/public/signup', [])" xattr-fullsize="btn-block" xattr-theme="btn-info" xattr-disabled=""><i class="" icon-theme=""></i> <span class="" text-theme="">Cadastre-se</span></button></div>
@@ -95,4 +95,4 @@
             </div>
         </div>
     </div>
-</div>
+</div></div>
