@@ -4,12 +4,15 @@ package competicao.entity;
 import java.io.*;
 import jakarta.persistence.*;
 import java.util.*;
-import javax.xml.bind.annotation.*;
+import jakarta.xml.bind.annotation.*;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonFilter;
 import cronapi.rest.security.CronappSecurity;
 import cronapi.swagger.CronappSwagger;
 
+
+
+import cronapp.framework.core.persistence.*;
 
 /**
 * Classe que representa a tabela PARTIDA
@@ -20,6 +23,7 @@ import cronapi.swagger.CronappSwagger;
 @XmlRootElement
 @CronappSecurity
 @JsonFilter("competicao.entity.Partida")
+@CronappTable(role=CronappTableRole.CLASS)
 public class Partida implements Serializable {
     /**
     * UID da classe, necessário na serialização
@@ -31,6 +35,7 @@ public class Partida implements Serializable {
     * @generated
     */
     @Id
+    @CronappColumn(attributeType="STRING", label="Id", defaultValue = "UUID.randomUUID().toString().toUpperCase()")
     @Column(name = "id", nullable = false, insertable=true, updatable=true)
         private java.lang.String id = UUID.randomUUID().toString().toUpperCase();
 
@@ -39,6 +44,7 @@ public class Partida implements Serializable {
     * @generated
     */
     @Temporal(TemporalType.TIMESTAMP)
+    @CronappColumn(attributeType="DATETIME", label="Data Hora Partida")
     @Column(name = "data_hora_partida", nullable = false, unique = false, insertable=true, updatable=true)
         
         private java.util.Date data_hora_partida;
@@ -83,6 +89,7 @@ public class Partida implements Serializable {
     /**
     * @generated
     */
+    @CronappColumn(attributeType="INTEGER", label="Gols Mandante")
     @Column(name = "gols_mandante", nullable = false, unique = false, insertable=true, updatable=true)
         
         private java.lang.Integer gols_mandante;
@@ -91,6 +98,7 @@ public class Partida implements Serializable {
     /**
     * @generated
     */
+    @CronappColumn(attributeType="INTEGER", label="Gols Visitante")
     @Column(name = "gols_visitante", nullable = false, unique = false, insertable=true, updatable=true)
         
         private java.lang.Integer gols_visitante;
@@ -99,6 +107,7 @@ public class Partida implements Serializable {
     /**
     * @generated
     */
+    @CronappColumn(attributeType="BOOLEAN", label="Penalidades")
     @Column(name = "penalidades", nullable = true, unique = false, insertable=true, updatable=true)
         
         private java.lang.Boolean penalidades;
@@ -107,6 +116,7 @@ public class Partida implements Serializable {
     /**
     * @generated
     */
+    @CronappColumn(attributeType="INTEGER", label="Penaltis Mandante")
     @Column(name = "penaltis_mandante", nullable = true, unique = false, insertable=true, updatable=true)
         
         private java.lang.Integer penaltis_mandante;
@@ -115,6 +125,7 @@ public class Partida implements Serializable {
     /**
     * @generated
     */
+    @CronappColumn(attributeType="INTEGER", label="Penaltis Visitante")
     @Column(name = "penaltis_visitante", nullable = true, unique = false, insertable=true, updatable=true)
         
         private java.lang.Integer penaltis_visitante;
@@ -123,6 +134,7 @@ public class Partida implements Serializable {
     /**
     * @generated
     */
+    @CronappColumn(attributeType="BOOLEAN", label="Partida Finalizada")
     @Column(name = "partida_finalizada", nullable = false, unique = false, insertable=true, updatable=true)
         
         private java.lang.Boolean partida_finalizada;

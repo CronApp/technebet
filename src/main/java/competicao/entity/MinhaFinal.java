@@ -4,12 +4,15 @@ package competicao.entity;
 import java.io.*;
 import jakarta.persistence.*;
 import java.util.*;
-import javax.xml.bind.annotation.*;
+import jakarta.xml.bind.annotation.*;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonFilter;
 import cronapi.rest.security.CronappSecurity;
 import cronapi.swagger.CronappSwagger;
 
+
+
+import cronapp.framework.core.persistence.*;
 
 /**
 * Classe que representa a tabela MINHAFINAL
@@ -20,6 +23,7 @@ import cronapi.swagger.CronappSwagger;
 @XmlRootElement
 @CronappSecurity
 @JsonFilter("competicao.entity.MinhaFinal")
+@CronappTable(role=CronappTableRole.CLASS)
 public class MinhaFinal implements Serializable {
     /**
     * UID da classe, necessário na serialização
@@ -31,6 +35,7 @@ public class MinhaFinal implements Serializable {
     * @generated
     */
     @Id
+    @CronappColumn(attributeType="STRING", label="Id", defaultValue = "UUID.randomUUID().toString().toUpperCase()")
     @Column(name = "id", nullable = false, insertable=true, updatable=true)
         private java.lang.String id = UUID.randomUUID().toString().toUpperCase();
 
@@ -65,6 +70,7 @@ public class MinhaFinal implements Serializable {
     /**
     * @generated
     */
+    @CronappColumn(attributeType="INTEGER", label="Pontuacao")
     @Column(name = "pontuacao", nullable = false, unique = false, insertable=true, updatable=true)
         
         private java.lang.Integer pontuacao;
@@ -73,6 +79,7 @@ public class MinhaFinal implements Serializable {
     /**
     * @generated
     */
+    @CronappColumn(attributeType="STRING", label="Usuario")
     @Column(name = "usuario", nullable = false, unique = false, insertable=true, updatable=true)
         
         private java.lang.String usuario;
