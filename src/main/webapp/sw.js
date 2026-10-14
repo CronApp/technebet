@@ -9,16 +9,19 @@ self.addEventListener('install', event => {
 });
 
 self.addEventListener('fetch', event => {
+  if (event.request.method !== 'GET') {
+    event.respondWith(fetch(event.request));
+    return;
+  }
+
   const fetchPromise = new Promise((resolve, reject) => {
     // Try to get from remote
     fetch(event.request).then(response => {
       // We have internet, try to cache it
       caches.open('static').then(cache => {
-        try {
-          cache.add(event.request);
-        } catch (error) {
+        cache.put(event.request, response.clone()).catch(() => {
           console.debug('Could not add cache for resource:', event.request);
-        }
+        });
       });
       resolve(response);
     }).catch(error => {

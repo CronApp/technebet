@@ -3,7 +3,7 @@ package blockly.Usuario;
 import cronapi.*;
 import cronapi.rest.security.CronappSecurity;
 import java.util.concurrent.Callable;
-
+import org.springframework.web.bind.annotation.*;
 
 
 @CronapiMetaData(type = "blockly")
@@ -18,11 +18,11 @@ public static final int TIMEOUT = 300;
  * @param senha
  * @param nome
  *
- * @author Matheus Portugal Ribeiro
- * @since 17/11/2022 11:39:40
+ * @author Wesley Miranda De Oliveira
+ * @since 05/05/2026, 10:23:03
  *
  */
-public static Var CadastrarUsuario(@ParamMetaData(description = "email", id = "53b42e7f") Var email, @ParamMetaData(description = "senha", id = "2bc04d37") Var senha, @ParamMetaData(description = "nome", id = "fca923a9") Var nome) throws Exception {
+public static Var CadastrarUsuario(@ParamMetaData(description = "email", id = "53b42e7f") @RequestBody(required = false) Var email, @ParamMetaData(description = "senha", id = "2bc04d37") Var senha, @ParamMetaData(description = "nome", id = "fca923a9") Var nome) throws Exception {
  return new Callable<Var>() {
 
    private Var id_usuario = Var.VAR_NULL;
@@ -113,11 +113,11 @@ public static Var CadastrarUsuario(@ParamMetaData(description = "email", id = "5
  * @param username
  * @param password
  *
- * @author Matheus Portugal Ribeiro
- * @since 17/11/2022 11:39:40
+ * @author Wesley Miranda De Oliveira
+ * @since 05/05/2026, 10:23:03
  *
  */
-public static Var login(@ParamMetaData(description = "username", id = "eb4f9fa9") Var username, @ParamMetaData(description = "password", id = "59713897") Var password) throws Exception {
+public static Var login(@ParamMetaData(description = "username", id = "eb4f9fa9") @RequestBody(required = false) Var username, @ParamMetaData(description = "password", id = "59713897") Var password) throws Exception {
  return new Callable<Var>() {
 
    private Var response = Var.VAR_NULL;
@@ -146,7 +146,7 @@ public static Var login(@ParamMetaData(description = "username", id = "eb4f9fa9"
           err = Var.valueOf(err_exception);
          cronapi.util.Operations.throwException(err);
      }
-    return response;
+    return Var.VAR_NULL;
    }
  }.call();
 }
